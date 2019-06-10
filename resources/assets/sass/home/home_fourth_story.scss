@@ -1,0 +1,53 @@
+.home_fourth_story-container{
+	margin-top: 17px;
+	@include breakpoint($pc){
+		@include container();
+	}
+}
+.home_fourth_story_aside_story{
+	@include span(12);
+	
+}
+.home_fourth_story_aside_story{
+
+	h3{
+	   line-height: 1.5em;
+	}
+	padding: 0 5px;
+}
+.home_fourth_story_aside_content{
+	h4{
+		color: $grey-medium;
+		height: 6em;
+		@include breakpoint($pc){
+			height: 3em;
+		}
+	}
+}
+.home_fourth_story_aside{
+	padding: 15px 0;
+	@include breakpoint($pc){
+		padding: 0;
+	}
+}
+.home_fourth_story_aside_story:last-child{
+	border: none;
+	padding: 0 5px;
+	float: right;
+}
+.home_fourth_story_main_story{
+	@include breakpoint($pc){
+		@include span(8);
+	}
+}
+.home_fourth_story_content{
+	@include breakpoint($pc){
+		@include span(12);
+	}
+}
+.home_fourth_story_aside{
+	@include breakpoint($pc){
+		@include span(4);
+		float: right;
+	}
+}

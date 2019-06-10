@@ -1,0 +1,16 @@
+<h1 class="search_page_heading">Our Most Discussed Articles</h1>
+<div class="stories-list">
+    {% include "mostDiscussedArticles/three_col_story"  %}
+  {% if showLoadMore %}
+    <div class="loadmore">
+            <div class="load-more-results"></div>
+              <!-- <div id="load-more-loader"><img src="{{ assetPath('ellipsis.svg') }}"/></div> -->
+              <button class="load-more" id="load-more-button">Load More</button>
+            </div>
+  {% endif %}
+</div>
+<script type="text/javascript">
+  var storyTemplate = "list_collections_search" ;
+  var api ='/api/v1/search?fields={{ loadMoreFields }}&q={{ searchKey }}';
+  qtReady.push(function() { app.quintypeLoadMore($(".loadmore"), {limit: 3, offset: {{ storyCount }}}, api, storyTemplate); });
+</script>

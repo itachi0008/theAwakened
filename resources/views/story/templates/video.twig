@@ -1,0 +1,18 @@
+<div class="video-story-header">
+  <iframe src="{{ story['cards'][0]['story-elements'][0]['embed-url'] }}" frameBorder="0" allowFullScreen></iframe>
+</div>
+<div class="story-body">
+  {% for card in story['cards'][0]['story-elements'] | slice(1) %}
+    <div class="card {{ story['cards']['metadata']['attributes']['alignment'][0] }}">
+      {% include 'story/video_story_elements' with {'storyElements': card } %}
+    </div>
+  {% endfor %}
+  {% for card in story['cards'] | slice(1) %}
+    <div class="card {{ card['metadata']['attributes']['alignment'][0] }}">
+      {% include "story/story_card" with {'storyCard': card } %}
+    </div>
+  {% endfor %}
+  <div class="tags">
+    {% include '/story/tags' with {'tags': story['tags'] } %}
+  </div>
+</div>

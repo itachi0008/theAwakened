@@ -1,0 +1,224 @@
+.hero_tag_container{
+	width: 100%;
+	background: transparent;
+	margin-top: -100px;
+	position: absolute;
+	@include breakpoint ($pc){
+		width: 320px;
+		margin-top: 0;
+		position: absolute;
+		right: 240px;
+		top: 150px;
+	}
+}
+.cta_button_text_container{
+	color: $white;
+	z-index: -1;
+	margin-top: -45px;
+	padding:30px 30px 0px 30px;
+	text-align: left;
+	@include breakpoint($pc){
+		background-color: $white;
+		color: #1c598b;
+		padding:70px 18px 0px 18px;
+	}
+}
+.hero_tag_button{
+	padding:0 30px;
+	color: $tag_text;
+	font-size: $fontsize-base;
+	text-align: left;
+	background-color: $white;
+	@include breakpoint($pc){
+		padding:70px 20px 0 20px;
+		position: absolute;
+		margin-top: -8px;
+		z-index: 5;
+	}
+	p{
+		margin: 10px 0;
+		padding: 0 15px;	
+	}
+}
+.hero_tag_button_container{
+	width: 100%;
+	padding: 15px 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	@include breakpoint($pc){
+		display: block;
+	}
+
+}
+.tag_button_sign_up{
+	padding:12px 33px;
+	margin-right: 6px;
+	background: $tag_button;
+	color: $white;
+	border-radius: 100px;
+	float: left;
+	cursor: pointer;
+	@include breakpoint($pc){
+		padding: 12px 40px;
+	}
+}
+.tag_button_learn_more{
+	padding:12px 21px;
+	margin-left: 6px;
+	color: $tag_button;
+	background: $white;
+	border-radius: 100px;
+	float: right;
+	border: solid 1px $tag_button;
+	@include breakpoint($pc){
+		padding:12px 26px;;
+	}
+
+}
+.postionfix{
+	height: 300px;
+	width: 100%;
+	float: left;
+	margin-bottom: 110px;
+	@include breakpoint($pc){
+		display: none;
+	}
+}
+.home_page_stories_container{
+	width: 100%;
+	@include breakpoint($pc){
+		padding: 0 15px;
+		@include container($custom_grid);
+	}
+}
+.home_page_stories{
+	width: 100%;
+	@include breakpoint($pc){
+		@include span(4);
+	}
+	h2{
+		text-align: left;
+		padding: 0 15px;
+		font-size: $fontsize-medium;
+		line-height: 21px;
+		height: 62px;
+		overflow: hidden;
+		margin-bottom: 10px;
+
+	}
+	p{
+		text-align: left;
+		padding: 0 15px;
+		font-size: $fontsize-small;
+		line-height: 20px;
+		height: 60px;
+		color: $tag_text;
+		margin-bottom: 10px;
+
+	}
+	img{
+		width: 100%;
+	}
+	&:nth-child(1){
+		@include breakpoint($pc){
+			float: left;
+		}
+	}
+	&:nth-child(2){
+		@include breakpoint($pc){
+			margin: 0 15px;
+		}
+	}
+	&:nth-child(3){
+		@include breakpoint($pc){
+			@include breakpoint($pc){
+				float: right;
+			}
+		}
+	}
+	.stories_author_container{
+		padding: 5px 15px 5px 15px;
+		border-top: $home_story_border solid 1px;
+		margin: 10px 0;
+		color: $home_story_author;
+		font-size: $fontsize-smaller;
+	}
+}
+.home_page_load_more{
+	text-align: center;
+	margin: 20px 0;
+	width: 100%;
+	float: left;
+	span{
+		padding: 5px 15px;
+		color: $tag_button;
+		background-color: $white;
+		border: 1px solid $tag_button;
+		border-radius: 25px;
+	}
+}
+
+
+
+//tooltip search 
+
+.tooltip_search{
+	position:absolute;
+	width: 100%;
+	visibility: hidden;
+	z-index: 100;
+	top: 40px;
+	@include breakpoint($tablet){
+		top: 54px;
+	}
+	@include breakpoint($pc){
+		top: 52px;
+	}
+	&--jsactive{
+		visibility: visible;
+	}
+}
+.search_article{
+	color: $deep_blue;
+	width: 100%;
+	position: relative;
+	background: $white;
+	padding: 10px 2px;
+	
+	&::placeholder{
+		color: $deep_blue;
+	}
+	&:after{
+		bottom: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(0, 0, 0, 0);
+		border-bottom-color: #ffff;
+		border-width: 30px;
+		margin-left: -30px;
+	}
+}
+.search{
+	display: none;
+}
+.search-tolltip-icon{
+	position: absolute;
+	padding:4px;
+	bottom: -4px;
+	display: none;
+	background-color: $white;
+	@include transform(rotate(45deg));
+	@include breakpoint($pc){
+		padding:6px;
+		bottom: -6px;
+	}
+	&--jsactive{
+		display: block;
+	}
+}

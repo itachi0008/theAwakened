@@ -1,0 +1,20 @@
+<section class="authors-container">
+	<div class="authors">
+		<h3>The Moderators</h3>
+		<div class="authors_list">
+			{% for authorList in authors | slice(0,5) %}
+			<div class="authors_list_item">
+				<a href="/author/{{ authorList['id'] }}">
+				{% if authorList['avatar-url'] %}
+        			<img class="authorPage_img" src="{{authorList['avatar-url']}}">
+        		{% else %}
+       			 	<img class ="authorPage_img" src="{{assetPath('default_author_display.svg')}}">
+      			{% endif %}
+				<br><h5 class="authors_list_name">{{ authorList['name'] }}</h5>
+			    </a>
+			</div>
+			{% endfor %}
+		</div>
+		<a href="/authors"><h6 class="seeall">see all</h6></a>
+	</div>
+</section>

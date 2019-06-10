@@ -1,0 +1,64 @@
+.story_author_info{
+	float: left;
+	border-top: 1px #1c598b solid;
+	border-bottom: 1px #1c598b solid;
+	width: 100%;
+	padding: 10px 15px;
+	margin: 15px 0;
+	@include breakpoint($pc){
+		padding:10px 0;
+	}
+	
+	.author_info_text_container{
+		width: 80%;
+		float: left;
+		padding: 0 0 0 20px;
+		p{
+			color: $static_p;
+			@include breakpoint($pc){
+				display: block;
+			}
+		}
+		@include breakpoint($pc){
+			width: 88%;
+		}
+	}
+	p{
+		color: $static_p;
+		line-height: $lineHeight-tighter;
+		font-size: $fontsize-smallest;
+		display: none;
+		@include breakpoint($pc){
+			display: block;
+		}
+	}
+}
+
+.story_author_info_img{
+	display: block;
+	border-radius: 100%;
+	object-fit: cover;
+	@include breakpoint($pc){
+		
+	}
+}
+.story_page_author{
+	font-weight: 700;
+	font-size: 13px;
+	color: #9b9b9b;
+	margin-right: 15px;
+	float: left;
+}
+.author_image_container{
+	width: 20%;
+	float: left;
+	@include breakpoint($pc){
+		width: 12%;
+	}
+	img{
+		width: 54px;
+		@include breakpoint($pc){
+			width: 72px;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{% set elementSubtype = '/story/story_elements/story_elements_sub_type/'~element['subtype'] %}
+{# include respective sub type twig file: summary, blockquote, blurb, quote, bigfact, q_and_a #}
+{% if element['subtype'] != null %}
+  {% include elementSubtype with {'element': element} %}
+{% else %}
+  {{ element.text|raw }}
+{% endif %}

@@ -1,0 +1,16 @@
+<div class="hamburger_icon">
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready( function(){
+    $('.hamburger_icon').click( function() {
+        $(".push_pull_menu").toggleClass("push_pull_menu_not_active");
+        $(".layout-content").toggleClass("menu_js_active_bg");
+        $(".mainfooter-container").toggleClass("menu_js_active_bg");
+    });
+});
+</script>

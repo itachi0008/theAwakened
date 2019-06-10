@@ -1,0 +1,12 @@
+#! /bin/bash
+
+SERVER_ENV=$1
+: ${SERVER_ENV:=local}
+
+if [ "$SERVER_ENV" == "local" ]
+then
+   echo "In Local Environment"
+   npm install
+   ./node_modules/.bin/gulp
+   php artisan serve --host=insurge-web.staging.quintype.io --port=80
+fi

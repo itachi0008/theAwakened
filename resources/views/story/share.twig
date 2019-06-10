@@ -1,0 +1,44 @@
+<div class="social-links">
+  {% set shareUrl = site_url ~ '/' ~ story['slug'] %}
+  <a  class="fb-xfbml-parse-ignore facebook social-share"
+      target="_blank"
+      href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}&amp;t={{ story['summary'] }}"
+      data-service="facebook"
+      data-social-media-type="facebook"
+      data-social-media-share-url="{{ shareUrl }}"
+      data-mobile-iframe="true">
+    {% include "story/social_icons/facebook_svg_icon" %}
+  </a>
+  <a  class="twitter social-share"
+      target="_blank"
+      href="https://twitter.com/intent/tweet?url={{ shareUrl }}&amp;text={{ story['headline'] | trim | url_encode  }}"
+      data-service="twitter"
+      data-social-media-type="twitter"
+      data-social-media-share-url="{{ shareUrl }}">
+     {% include "story/social_icons/twitter_svg_icon" %}
+  </a>
+  <a  class="gplus social-share"
+      target="_blank"
+      href="https://plus.google.com/share?url={{ shareUrl }}"
+      data-service="google_plusone_share"
+      data-social-media-type="google_plusone_share"
+      data-social-media-share-url="{{ shareUrl }}">
+     {% include "story/social_icons/gplus_svg_icon" %}
+  </a>
+  <a  class="linkedin social-share"
+      target="_blank"
+      href="https://www.linkedin.com/shareArticle?mini=true&url={{ shareUrl }}"
+      data-service="linkedin"
+      data-social-media-type="linkedin"
+      data-social-media-share-url="{{ shareUrl }}">
+     {% include "story/social_icons/linkedin_svg_icon" %}
+  </a>
+  <a  class="whatsapp social-share"
+      target="_blank"
+      href="whatsapp://send?text={{ shareUrl }}"
+      data-service="whatsapp"
+      data-social-media-type="whatsapp"
+      data-social-media-share-url="{{ shareUrl }}">
+     {% include "story/social_icons/whatsapp_svg_icon" %}
+  </a>
+</div>

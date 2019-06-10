@@ -1,0 +1,59 @@
+<div class="story_page_main_stroy_content article_header js-story-header-content story-header__content">
+	<img alt="{{ story['hero-image-attribution'] }}" title= "{{ story['hero-image-attribution'] }}" src="{{ focusedImageUrl(story['hero-image-s3-key'], [3,1.5], story['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}">
+	<div class="story_wrapper">
+		<h1>{{ story['headline'] | raw }}</h1>
+		<h6>{{ story['subheadline'] }}</h6>
+
+
+		{% include "/story/author_info" %}
+		{# <div class="response_container">
+		<div class="insight_cout"><span>3</span> <span class="desktop-only">Insights</span></div>
+		<div class="action_cout"><span>1</span> <span class="desktop-only">Actions</span></div>
+		<div class="axiom_cout"><span>1</span> <span class="desktop-only">Axiom</span></div>
+	</div> #}
+
+	<div itemprop="articleBody" class="article_body story-element-view"
+	data-story-content-id="{{ story['story-content-id'] }}"
+	data-story-version-id="{{ story['story-version-id'] }}">
+	{% for card in story['cards'] %}
+	{% include '/story/story_card' with {'storyCard': card } %}
+	{% endfor %}
+	<div id="youtube-iframe-api"></div>
+	<div class="story_page_tags">
+		{% include '/story/tags' with {'tags': story['tags'] } %}
+	</div>
+	<div class="story_comment_container icon_wrapper">		 
+        <div class="bulb"  id="bulb_{{ story['story-content-id'] }}"></div> 
+        <span class="bulb_{{ story['story-content-id'] }}"></span> 
+		<div class="comment_icon" id="comment_{{ story['story-content-id'] }}"></div>
+								<span class="comment_{{ story['story-content-id'] }}">
+								{% if commentCount['total_count'] == null %}
+								0
+								{% else %}
+								 {{ commentCount['total_count'] }}
+								{% endif %}
+								</span> 
+		<div class="send-arrow"></div>
+		<!-- <div class="story_metype_container">
+			<div id="metype-container" class="iframe-container" data-metype-account-id="49" data-metype-host="https://metype-api.staging.quintype.com"></div>
+			<script type="text/javascript">talktype(function() {
+				talktype.commentWidgetIframe(document.getElementById("metype-container"));
+				});
+			</script>
+	    </div> -->
+		<div class="bookmark" id="bookmark"></div>
+	</div>
+	<div class="social-share">
+		<h6>Share</h6>
+		<span class="social-share__icon social-share--facebook"></span>
+		<span class="social-share__icon social-share--twitter"></span>
+	</div>
+
+</div>
+
+{% include '/story/axiom' %}
+</div>
+</div>
+
+
+

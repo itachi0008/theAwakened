@@ -1,0 +1,44 @@
+<section class="section_three_col_story">
+    <div class="section_story-container">
+    {% for item in stories | slice(0,12) %}
+     {% if item['type'] == 'story' %}
+            {% set story = item['story'] %}  
+            {% if story['hero-image-caption'] == 'axiom' %}
+                    <div class="section_three_col_stories_one">
+                        <a href="/{{ story['slug'] }}">
+                        <div class="section_axiom-container">
+                        <span class="axiomicon"></span>
+                        <span class="axiom_heading">AXIOM</span>
+                            <p class="axiom_content">{{ story['subheadline'] | length > 130 ? story['subheadline'] | slice(0,130) ~ '...' : story['subheadline'] }}</p>
+                              <div class="section_threecol_axiom_comment_container">
+                                <div class="section_comnt_icon"></div>
+                                <span class="comment_container--count"> </span><span class="comment_container--text">  </span>
+                                <span class="threedoticon"></span>
+                                <span class="comment_container--info"></span>
+                            </div>  
+                        </div>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="section_three_col_stories_one">
+                        <a href="/{{ story['slug'] }}">
+                        <div class="section_three_col_stories_one_story">
+                                <img alt="{{ story['hero-image-attribution'] }}" title= "{{ story['hero-image-attribution'] }}" src="{{ focusedImageUrl(story['hero-image-s3-key'], [3,1.5], story['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}">
+                            <h3 class="settwoline_section">{{  story['headline']  | length > 57 ? story['headline'] | slice(0,57) ~ '...' : story['headline'] }}</h3>
+                            <a href="/author/{{ story['author-id'] }}">
+                            <span class="story_author_section">{{ story['author-name'] }}</span>
+                            </a>
+                                <!--  <div class="section_three_col_comment_container">
+                                    <div class="section_comnt_icon"></div>
+                                    <span class="comment_container--count"> </span><span class="comment_container--text">  </span>
+                                    <span class="comment_container--info"></span>
+                                    <span class="threedoticon"></span>
+                                </div>  -->
+                        </div>
+                        </a>
+                    </div>
+            {% endif %}
+       {% endif %}
+    {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,381 @@
+.axiom_page_container{
+	width: 100%;
+	background-color: $bg_white;
+	padding: 0 10px;
+	@include breakpoint($pc){
+		@include container();
+		background-color: $white;
+	}
+	
+}
+.axiom_page_wrapper{
+	width: 100%;
+	text-align: center;
+	h1{
+		padding: 12px 24px;
+		font-size: $fontsize-smallest;
+		color: $b_color;
+		text-align: left;
+		margin: 10px 0;
+		border-top: $border_color solid 1px;
+		border-bottom: $border_color solid 1px;
+		@include breakpoint($pc){
+			border-left: $border_color 1px solid;
+			border-right: $border_color 1px solid;
+		}
+	}
+	h2{
+		text-align: center;
+		font-size: $fontsize-tw;
+		text-transform: uppercase;
+		color: $p_color;
+		margin: 20px 0;
+	}
+}
+.axiom_page_axiom{
+	width: 100%;
+	background-color: $axiom_bg_color;
+	color: $p_color;
+	border-top: $golden-yellow 1px solid;
+	border-bottom: $golden-yellow 1px solid;
+	margin-bottom: 30px;
+	@include breakpoint($pc){
+		border-left: $golden-yellow 1px solid;
+		border-right: $golden-yellow 1px solid;
+	}
+	p{
+		font-size: $fontsize-m;
+		line-height: 27px;
+		padding: 28px;
+		text-align: left;
+	}
+}
+
+.insight_page_insight{
+	width: 100%;
+	background-color: rgba(84, 183, 76, 0.65);
+	color: #0f3147;
+	border-top: #5b621d 1px solid;
+	border-bottom: #5b621d 1px solid;
+	margin-bottom: 30px;
+	@include breakpoint($pc){
+		border-left: #5b621d 1px solid;
+		border-right: #5b621d 1px solid;
+	}
+	p{
+		font-size: $fontsize-m;
+		line-height: 27px;
+		padding: 28px;
+		text-align: left;
+	}
+}
+
+.action_page_action{
+	width: 100%;
+	background-color: rgba(236, 129, 37, 0.65);
+	color: #4a4a4a;
+	border-top: #a80d0d 1px solid;
+	border-bottom: #a80d0d 1px solid;
+	margin-bottom: 30px;
+	@include breakpoint($pc){
+		border-left: #a80d0d 1px solid;
+		border-right: #a80d0d 1px solid;
+	}
+	p{
+		font-size: $fontsize-m;
+		line-height: 27px;
+		padding: 28px;
+		text-align: left;
+	}
+}
+
+.axiom_page_rate{
+	text-align: center;
+	color: $p_color;
+	margin: 15px 0;
+	h4{
+
+	}
+	button{
+		border-radius: 100px;
+		border: $border_color 1px solid;
+		background-color: $white;
+		text-transform: uppercase;
+		font-size: $fontsize-small;
+		outline: none;
+		cursor: pointer;
+	}
+	.add_insightful{
+		margin: 16px 0;
+		button{
+			padding:15px 69px;
+		}
+	}
+	.add_need_improvment{
+		margin-bottom: 16px;
+		button{
+			padding: 15px 30px;
+		}
+	}
+	span{
+		margin-left: 15px;
+	}
+}
+.axiom_page_article_container{
+	padding: 0 20px;
+	position: relative;
+	.axiom_page_heading{
+		text-transform: uppercase;
+		padding: 15px 10px;
+		transition: 0.3s;
+		float: left;
+		margin-right: 15px;
+		border: none;
+		background-color: transparent;
+		line-height: 30px;
+		outline: none;
+		&:hover{
+			@include breakpoint($pc){
+				background-color: $border_color;
+			}
+		}
+	}
+	.axiom_page_heading_active{
+		border-bottom: 6px $golden-yellow solid;
+		transition: 0.3s;
+		display: block;
+		margin-bottom: -6px;
+	}
+	.axiom_page_article{
+		width: 100%;
+		float: left;
+		margin: 15px 0;
+		h3{
+			text-align: left;
+			font-size: $fontsize-base;
+			color: $b_color;
+		}
+		h6{
+			margin: 5px 0;
+			font-size: $fontsize-smallest;
+			color: $input_border_color;
+		}
+	}
+	.axiom_page_sellall{
+		width: 100%;
+		float: left;
+		text-align: center;
+		margin: 15px 0;
+		cursor: pointer;
+	}
+	
+}    
+
+.axiom_page_article_tabs{
+	width: 100%;
+	float: left;
+	display: flex;
+}
+//Axiom Add Rate
+.axiom_rate_container{
+	width: 100%;
+	float: left;
+	background-color: $bg_white;
+	@include breakpoint($pc){
+		background-color: $white;
+	}
+}
+.axiom_page_article_tab_content{
+	width: 100%;
+	float: left;
+	animation:fadeEffect 1s;
+	display: none;
+}
+.axiom_rating_comments_box{
+	float: left;
+	display: none;
+	width: 100%;
+	padding: 5px 25px;
+	img{
+		border-radius: 100%;
+		width: 40px;
+		float: left;
+		margin-right: 12px;
+	}
+	.axiom_user_name{
+		font-weight: lighter;
+		font-size: 13px;
+		color: #9b9b9b;
+		margin: 10px;
+		float: left;
+	}
+}
+.action_add_ajax{
+	border:1px solid $p_color;
+	margin: 5px 0;
+	padding: 0 5px;
+}
+#related_article_tab_content{
+	display: block;
+}
+
+.goBackButton{
+	padding:5px 10px;
+	border-radius: 18px;
+	cursor: pointer;
+	background-color:#f3f3f3 ;
+	color: #7a7a7a;
+	font-size:12px;
+	margin-bottom: 15px;
+	display: inline-block; 
+}
+.axiom_subheadline{
+	font-family: $zilla;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 1.13;
+	text-align: left;
+	color: #1c598b;
+	margin-bottom: 15px;
+}
+
+.axiom_wrapper{
+	margin-top: 25px;
+	float: left;
+	width: 100%;
+}
+
+.axiom_content_left {
+	float: left;
+	max-width: 100%;
+	@include breakpoint($pc){
+		@include container($page_grid);
+	}
+	img{
+		width: 100%;
+	}
+}
+.axiom_content_right {
+	float: left;
+	padding:0;
+	width: 100%; 
+	@include breakpoint($pc){
+		padding: 42px 0 0 25px;
+		width: 31%;
+	}
+	span{	
+		color: #9b9b9b;
+		line-height: 16px;
+		font-size: 13px;
+		margin-top: 20px;
+	}
+	.accordions_container{
+		width: 100%;
+		margin: 10px 0;
+	}
+	.accordion {
+		background-color:transparent;
+		color: #7a7a7a;
+		cursor: pointer;
+		padding: 4px 0;
+		margin: 5px 0;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 14px;
+		transition: 0.4s;
+		border-top:1px solid #a8a8a8;
+		font-weight: 600;
+		position: relative;
+		&_tag__container{
+
+			a{
+				border: solid 1px #a8a8a8;
+				font-size: 11px;
+				color: #1c598b;
+				padding: 2px 8px;
+				margin: 2px 1px;
+				display: inline-block;
+				border-radius: 25px;
+			}
+		}
+		&__count{
+			position: absolute;
+			right: 15px;
+			margin: 0;
+		}
+	}
+	button.accordion:after {
+		content: '\002B';
+		color: #777;
+		font-weight: bold;
+		float: right;
+		margin-left: 5px;
+	}
+
+	button.accordion.active:after {
+		content: "\02212";
+	}
+
+	div.panel {
+		padding:0;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.2s ease-out;
+	}
+}
+
+.axiom_share{
+	font-size: 14px;
+	color: #7a7a7a;
+	text-align: left;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 10px;
+}
+.responses__tab{
+	min-height: 0px;
+	overflow-y: scroll!important;
+}
+
+.social_share_axiompage{
+	width: 100%;
+	float: left;
+	padding: 10px 0 17px 0px;
+	border-top:1px solid #a8a8a8;
+
+	&__icon{
+		padding: 15px;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin-right: 10px;
+		cursor: pointer;
+	}
+	.social-share--facebook{
+		background-image: url("icon-share-facebook.svg");
+	}
+	.social-share--twitter{
+		background-image: url("icon-share-twitter.svg");
+	}
+	h6{
+		font-size: 14px;
+		color: #7a7a7a;
+		text-align:left;
+		width: 100%;
+		padding:0;
+	}
+}
+.social_share_axiompage .social-share{
+	padding: 0;
+}
+.fb-wrapper{
+	float: left;
+  text-align: center;
+}
+
+
+.tw-wrapper{
+	text-align: center;
+	float: left;
+}

@@ -1,0 +1,92 @@
+<section class="section_three_col_story">
+	<div class="section_story-container">
+	{% set count = 0 %}
+		{% for item in authorStories | slice(0,3) %}
+		<div class="three_col_stories_one">
+			<a href="/{{ item['slug'] }}">
+				<div class="three_col_stories_one_story">
+					<figure>
+					<img  alt="{{ item['hero-image-attribution'] }}" title= "{{ item['hero-image-attribution'] }}" src="{{ focusedImageUrl(item['hero-image-s3-key'], [3,1.75], item['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'})}}" />
+					</figure>
+					<div class="content_wrapper">
+						<h2>{{ item['headline']  | length >= 95 ? item['headline'] | slice(0,92) ~ '...' : item['headline'] }}</h2>
+						<p>{{ item['subheadline'] | length >= 150 ? item['subheadline'] | slice(0,147) ~ '...' : item['subheadline'] }}</p>
+					</div>
+					<div class="three_col_comment_container">
+						<a href="/author/{{ item['author-id'] }}">
+							<span class="story_author"> <span class="by-author-text">By</span> {{ item['author-name'] }}</span></a>
+							<div class="icon_wrapper">
+								<div class="bulb"  id="bulb_{{ item['id'] }}"></div> 
+								<span class="bulb_{{ item['id'] }}"></span>
+								<div class="comment_icon" id="comment_{{ item['id'] }}"></div>
+								<span class="comment_{{ story['story-content-id'] }}">
+                                {% if commentCount[count]['total_count'] == null %}
+                                0
+                                {% else %}
+                                    {{commentCount[count]['total_count']}}
+                                {% endif %}
+                                </span> 
+								<div class="bookmark" id="bookmark"></div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			{% set count = count + 1 %}
+			{% endfor %}
+		</div>
+	</section>
+
+	<section class="section_three_col_story">
+	<div class="section_story-container">
+	{% set count = 3 %}
+		{% for item in authorStories | slice(3,3) %}
+		<div class="three_col_stories_one">
+			<a href="/{{ item['slug'] }}">
+				<div class="three_col_stories_one_story">
+					<figure>
+					<img  alt="{{ item['hero-image-attribution'] }}" title= "{{ item['hero-image-attribution'] }}" src="{{ focusedImageUrl(item['hero-image-s3-key'], [3,1.75], item['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'})}}" />
+					</figure>
+					<div class="content_wrapper">
+						<h2>{{ item['headline']  | length >= 95 ? item['headline'] | slice(0,92) ~ '...' : item['headline'] }}</h2>
+						<p>{{ item['subheadline'] | length >= 150 ? item['subheadline'] | slice(0,147) ~ '...' : item['subheadline'] }}</p>
+					</div>
+					<div class="three_col_comment_container">
+						<a href="/author/{{ item['author-id'] }}">
+							<span class="story_author"> <span class="by-author-text">By</span> {{ item['author-name'] }}</span></a>
+							<div class="icon_wrapper">
+								<div class="bulb"  id="bulb_{{ item['id'] }}"></div> 
+								<span class="bulb_{{ item['id'] }}"></span>
+								<div class="comment_icon" id="comment_{{ item['id'] }}"></div>
+								<span class="comment_{{ story['story-content-id'] }}">
+                                {% if commentCount[count]['total_count'] == null %}
+                                0
+                                {% else %}
+                                    {{commentCount[count]['total_count']}}
+                                {% endif %}
+                                </span> 
+								<div class="bookmark" id="bookmark"></div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			{% set count = count + 1 %}
+			{% endfor %}
+		</div>
+	</section>
+
+
+	{% if authorStories | length > 6 %}
+	<div class="loadmore">
+		<div class="load-more-results"></div>
+		<!-- <div id="load-more-loader"><img src="{{ assetPath('ellipsis.svg') }}"/></div> -->
+		<button class="load-more" id="load-more-button">Load More</button>
+	</div>
+
+	{% endif %}
+	<script type="text/javascript">
+		var storyTemplate = "list_collections_authors" ;
+		var api ='/api/v1/search?author-id={{authorId}}&fields={{ params["fields"]}}&sort={{sort}}';
+		qtReady.push(function() { app.quintypeLoadMore($(".loadmore"), {limit: 3, offset: {{ storyCount }}}, api, storyTemplate); });
+	</script>

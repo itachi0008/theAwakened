@@ -1,0 +1,53 @@
+//base
+@import "base/grids";
+@import "base/z-index";
+@import "base/mixins";
+@import "base/typography";
+@import "colors";
+@import "layout";
+@import "vendor/slick/slick-theme";
+@import "vendor/slick/slick";
+//layout
+@import "shared/header";
+@import "shared/footer";
+
+//Home
+@import "home/hero";
+@import "home/tagline";
+@import "home/static_home";
+@import "home/home_main_story";
+@import "home/sec_storys";
+@import "home/authors";
+@import "home/home_third_story";
+@import "home/join_conversation";
+@import "home/home_fourth_story";
+@import "home/three_col_story";
+@import "home/home_fifth_story";
+//story
+@import "story/story_page_main";
+@import "story/sidepanel";
+@import "story/by-author";
+@import "story/story_element";
+
+//Section
+@import "section/section";
+
+//author
+@import "author/author";
+
+//profile
+@import "profile/profile";
+
+//tag
+@import "tag/tag";
+
+//side-login
+@import "shared/side-login";
+
+// home two
+@import "hometwo/home";
+
+
+//axiom page
+
+@import "axiom/axiom";

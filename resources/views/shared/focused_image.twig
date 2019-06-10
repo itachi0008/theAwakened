@@ -1,0 +1,7 @@
+<figure class="image-container">
+  <img class="story__image"
+       src="{{focusedImageUrl(slug, aspectRatio, metadata, imgixParams | merge({w: defaultWidth}))}}"
+       srcset="{% for width in widths %}
+                 {{focusedImageUrl(slug, aspectRatio, metadata, imgixParams | merge({w: width}))}} {{width}}w{% if not loop.last %},{% endif %}
+               {% endfor %}"/>
+</figure>

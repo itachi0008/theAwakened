@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile-designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="profile-other" transform="translate(-81.000000, -518.000000)">
+            <g id="Group" transform="translate(30.000000, 519.000000)">
+                <g id="facebook" transform="translate(51.000000, 0.000000)">
+                    <ellipse id="container-copy-2" stroke="#9B9B9B" cx="17.2786885" cy="16.5" rx="16.7213115" ry="16.5"></ellipse>
+                    <path d="M15.8944601,12.2824507 L15.8944601,14.171656 L14.4918033,14.171656 L14.4918033,16.4817836 L15.8944601,16.4817836 L15.8944601,23.3467024 L18.7758149,23.3467024 L18.7758149,16.4819751 L20.7093378,16.4819751 C20.7093378,16.4819751 20.890453,15.3742865 20.9782302,14.1631381 L18.7867103,14.1631381 L18.7867103,12.5836108 C18.7867103,12.3475319 19.1008653,12.0299739 19.4113993,12.0299739 L20.9812369,12.0299739 L20.9812369,9.625 L18.8467479,9.625 C15.8232361,9.62484049 15.8944601,11.9372651 15.8944601,12.2824507" id="facebook-copy" fill="#9B9B9B"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

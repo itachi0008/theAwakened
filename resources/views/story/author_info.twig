@@ -1,0 +1,31 @@
+<div class="story_author_info">
+  <a href="/author/{{ story['author-id'] }}">
+    <span itemtype="https://schema.org/ImageObject" itemscope="itemscope" itemprop="image">
+      <div class="author_image_container">
+        <img class="story_author_info_img" itemprop="url" src="{{ authorDetails['avatar-url'] }}"/>
+      </div>
+      <div class="author_info_text_container">
+        <span content="{{story['hero-image-metadata']['width']}}" itemprop="width">
+          <span content="{{story['hero-image-metadata']['height']}}" itemprop="height">
+          </span>
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person" class="story_page_author">
+            <span itemprop="name" class="author-name-story">{{ authorDetails['name'] }}</span>
+          </span>
+        </a>
+        <span class="story_author-in">in</span>
+        <a href="/section/{{ story['sections'][0]['slug'] }}">
+         <span class="storypage_story_topic">{{ story['sections'][0]['display-name'] }}</span>
+       </a>    
+       <p>{{authorDetails['bio']|replace({"moderator :": "", "Moderator :": "" }) | raw}}</p>
+       <time class="story_published_date" itemprop="datePublished" content="{{ dateIsoFormat(story['first-published-at'] // 1000) }}">Posted {% set timestamp = (story["first-published-at"]// 1000)|round(0, 'floor') %}{{ timestamp|date('M j, Y') }}</time>
+       <time itemprop="dateModified" content="{{ dateIsoFormat(story['last-published-at'] // 1000) }}">  
+        <div class="story_righticon">
+         <div class="icon_wrapper">
+            <div class="bulb"  id="bulb_{{ story['story-content-id'] }}"></div> 
+            <span class="bulb_{{ story['story-content-id'] }}"></span>
+        </div>
+        <span class="story_righticon__atattach"></span>
+      </div>
+    </div>
+  </div>
+

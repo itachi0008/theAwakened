@@ -1,0 +1,91 @@
+{% set firstStory = authorStories[0] %}
+{% set secondStory = authorStories[1] %}
+{% set thirdStory = authorStories[2] %}
+{% set firstStoryImage = focusedImageUrl(firstStory['hero-image-s3-key'], [6,3], firstStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) %}
+{% set secondStoryImage = focusedImageUrl(secondStory['hero-image-s3-key'], [3,1], secondStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) %}
+{% set thirdStoryImage = focusedImageUrl(thirdStory['hero-image-s3-key'], [3,1], thirdStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) %}
+
+{% if firstStory == "" %}
+
+<div id="content-wrapper">
+  <section class="container error-page">
+    <div class="error-page__title-container">
+      <h2 class="error-page__title">SORRY....
+        There are no stories for this author</h2>
+    </div>
+     </section>
+</div>
+{% endif %}
+
+<section class="section_story">
+	<div class="section_story-container">
+	{% if firstStory  != "" %}
+		<div class="section_story_main_story">
+		<a href="/{{ firstStory['slug'] }}">
+			<div class="section_first-story section_first_story_content">
+			<img alt="{{ firstStory['hero-image-attribution'] }}" title= "{{ firstStory['hero-image-attribution'] }}" src="{{ focusedImageUrl(firstStory['hero-image-s3-key'], [6,3], firstStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}">
+			<div class="section_common_wide__content">
+				<h3>{{ firstStory['headline'] | length > 108 ? firstStory['headline'] | slice(0,105) ~ '...' : firstStory['headline']  }}</h3>
+				<p>{{ firstStory['subheadline'] | length > 113 ? firstStory['subheadline'] | slice(0,110) ~ '...' : firstStory['subheadline']  }}</p>
+				<div class="author-section-wrapper">
+					<a href="/author/{{ firstStory['author-id'] }}">
+						<span class="story_author_section">{{ firstStory['author-name'] }}</span>
+					</a>				
+					<a href="/section/{{ firstStory['sections'][0]['slug'] }}">
+						<span class="section_first_story_topic">in  {{ firstStory['sections'][0]['display-name'] }}</span>
+					</a>
+				</div>
+				<!-- <div class="section_first_comment_container">
+					<div class="section_comnt_icon"></div>
+					<span class="comment_container--count"> </span><span class="comment_container--text">  </span>
+					<span class="comment_container--info"></span>
+					<span class="threedoticon"></span>
+				</div>  -->
+			</div>
+		</div>
+		</a>
+		</div>
+		{% endif %}
+		{% if secondStory  != "" %}
+		<div class="section_second_story_aside">
+			<a href="/{{ secondStory['slug'] }}">
+			<div class="section_second_story_aside_story">
+				<img alt="{{ secondStory['hero-image-attribution'] }}" title= "{{ secondStory['hero-image-attribution'] }}" src="{{ focusedImageUrl(secondStory['hero-image-s3-key'], [3,1.5], secondStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}">
+				<div class="section_second_story_aside_content">
+						<h3 class="settwoline_section">{{ secondStory['headline']  | length > 57 ? secondStory['headline'] | slice(0,57) ~ '...' : secondStory['headline'] }}</h3>
+						<a href="/author/{{ secondStory['author-id'] }}">
+						<span class="story_author_section">{{ secondStory['author-name'] }}</span>
+						</a>
+<!-- 					 <div class="section_second_aside_container">
+ -->						<div class="section_comnt_icon"></div>
+						<span class="comment_container--count"> </span><span class="comment_container--text">  </span>
+						<span class="comment_container--info"></span>
+						<span class="threedoticon"></span>
+					<!-- </div>  -->
+				</div>
+			</div>
+			</a>
+			{% if thirdStory  != "" %}
+			<a href="/{{ thirdStory['slug'] }}">
+			<div class="section_second_story_aside_story">
+					<img alt="{{ thirdStory['hero-image-attribution'] }}" title= "{{ thirdStory['hero-image-attribution'] }}" src="{{ focusedImageUrl(thirdStory['hero-image-s3-key'], [3,1.5], thirdStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}">
+					<div class="section_second_story_aside_content">
+						<h3 class="settwoline_section">{{ thirdStory['headline']  | length > 57 ? thirdStory['headline'] | slice(0,57) ~ '...' : thirdStory['headline'] }}</h3>
+						<a href="/author/{{ thirdStory['author-id'] }}">
+						<span class="story_author_section">{{ thirdStory['author-name'] }}</span>
+						</a>
+					<!--  <div class="section_second_aside_container"> -->
+						<div class="section_comnt_icon"></div>
+						<span class="comment_container--count"> </span><span class="comment_container--text">  </span>
+						<span class="comment_container--info"></span>
+						<span class="threedoticon"></span>
+					<!-- </div>  -->
+				   </div>
+			</div>
+			</a>
+			{% endif %}
+		</div>
+		{% endif %}
+	</div>
+</section>
+

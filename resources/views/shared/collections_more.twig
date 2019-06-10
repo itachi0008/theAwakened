@@ -1,0 +1,39 @@
+<section class="section_three_col_story">
+	<div class="section_story-container"> 	 
+		{% for story in stories %}  
+		<div class="three_col_stories_one">
+			<a href="/{{ story['story']['slug'] }}">
+				<div class="three_col_stories_one_story">
+					<figure>
+						<img alt="{{ story['story']['hero-image-attribution'] }}" title= "{{ story['story']['hero-image-attribution'] }}" src="{{ focusedImageUrl(story['story']['hero-image-s3-key'], [3,1.5], story['story']['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}">
+					</figure>
+					<div class="content_wrapper">
+						<h2>{{ story['story']['headline']  | length >= 95 ? story['story']['headline'] | slice(0,92) ~ '...' : story['story']['headline']  }}</h2>
+						<p>{{ story['story']['subheadline']  | length >= 150 ? story['story']['subheadline'] | slice(0,147) ~ '...' : story['story']['subheadline']  }}</p>
+					</div>
+					<div class="three_col_comment_container">
+						<a href="/author/{{ story['story']['author-id'] }}">
+							<span class="story_author"> <span class="by-author-text">By</span> {{ story['story']['author-name'] }}</span></a>
+							<div class="icon_wrapper">
+								<div class="bulb" id="bulb_{{ story['story']['story-content-id'] }}"></div> 
+								<span class="bulb_{{ story['story']['story-content-id'] }}"></span>
+								<div class="comment_icon" id="comment_{{ story['story']['story-content-id'] }}"></div>
+								<span class="comment_{{ story['story']['story-content-id'] }}"></span> 
+								<div class="bookmark" id="bookmark"></div>
+							</div>
+						</div>
+					</div>				
+				</a>
+			</div>
+
+			{% endfor %}
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			if ( $( ".bookmark" ).hasClass( "hidden" ) ) {
+				$( ".bookmark" ).hide();
+			}
+		});
+	</script>

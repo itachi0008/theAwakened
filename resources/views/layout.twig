@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/NewsArticle">
+<head>
+
+  {{ meta.display([], true)|raw }}
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="nonsense" content="nonsense">
+  <link rel="stylesheet" type="text/css" href="{{ assetPath("application.css") }}"/>
+
+  <!-- Qlitics Snippet -->
+
+  <script>
+    window.qlitics=window.qlitics||function(){(qlitics.q=qlitics.q||[]).push(arguments);};
+    qlitics('init');
+    qlitics('track', 'page-view', {'page-type': '{{page["type"]}}' });
+  </script>
+  <script async src='/qlitics.js'></script>
+  <!-- End Qlitics Snippet -->
+
+
+  <!-- <script type="text/javascript">
+   window.talktype = window.talktype || function(f) { (talktype.q=talktype.q||[]).push(arguments);};
+ </script>
+ <script type="text/javascript" src="https://d1y1r594kapmgi.cloudfront.net/quintype/metype/assets/application.js" async></script> -->
+
+</head>
+<body>
+
+  <script type="text/javascript">var qtReady = qtReady || [];</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  
+  <script type="text/javascript">
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", '/api/v1/members/me', false); // false for synchronous request
+    xmlHttp.send( null );
+    var data = xmlHttp.responseText;
+    console.log(xmlHttp.status);
+    if(xmlHttp.status == '403')
+    {
+      $(".bookmark").hide();
+     
+
+   }
+    else
+    {
+      var arr = {'Moscow':'bestplace','london':'fashion'};
+      $.ajax({
+          type: "POST",
+          contentType: "application/json",          
+          url: '/api/member/metadata', // This is the url we gave in the route
+          data: JSON.stringify({'metadata':arr}), 
+          datatype:JSON, // a JSON object to send back
+          success: function(response) { // What to do if we succeed
+            console.log(response);             
+          },
+          
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(JSON.stringify(jqXHR));
+            console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+          }
+        });
+        
+      $(".bookmark").show();
+      if(document.location.pathname == "/")
+      {
+       document.location.href= "/profile";
+     }    
+   }
+ </script>
+
+ <div class="body-container">
+
+  <nav class="nav-fixed section_container">
+    <div class="layout-menu">
+
+      {% block navigation %}
+
+      {% include "shared/header" %}
+
+      {% endblock %}
+    </div>
+  </nav>
+
+  <section class="layout-content">
+    <div id="container">
+      {% block content %}{% endblock %}
+    </div>
+  </section>
+
+  <div class="clear"></div>
+
+  <footer class="page-footer">
+    
+    {% block footer %}
+    {% include "shared/footer" %}
+    {% endblock %}
+    
+  </footer>
+
+</div>
+<script type="text/javascript">
+  var qtConfig = {
+    "image-cdn": "{{config("quintype.image-cdn")}}",
+    "polltype-host": "{{config['polltype-host']}}"
+  };
+</script>
+<script type="text/javascript" src="{{ assetPath("application.js") }}"></script>
+<!-- adding slick files -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script type="text/javascript">
+  app.initQtReady();
+</script>
+
+</body>
+</html>

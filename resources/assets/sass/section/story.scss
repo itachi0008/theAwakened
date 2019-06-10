@@ -1,0 +1,52 @@
+.storypage_container{
+	@include container();
+	padding: 15px;
+}
+.stories_container{
+	@include container($custom_grid);
+}
+.vol-container{
+	width: 100%;
+	display: inline-block;
+}
+.vol{
+	line-height: $lineHeight-wide;
+	color: $tomato;
+	font-size: $fontsize-smaller+px;
+	font-weight: $bold;
+	float: left;
+	@include breakpoint($pc){
+		font-size: $fontsize-larger+px;
+	}
+}
+.vol-selector{
+	border: none;
+	font-family: $font;
+	border-bottom: 3px solid $border_color;
+	padding: 5px 0;
+	color: $p_color;
+	font-weight: $extra-bold;
+	font-size: $fontsize-smaller+px;
+	float: right;
+	@include breakpoint($pc){
+		padding: 12px 150px 12px 12px;
+		font-size: $fontsize-larger-xx+px;
+		margin-top: -86px;
+	}
+}
+//Form 
+.form--wrapper{
+	
+	@include container($custom_grid);
+
+}
+.story__page-cta{
+	.cta{
+		@include breakpoint ($tablet){
+		 padding-left: 0px;
+		}
+	}
+	.cta h4{
+		padding-bottom: 60px;
+	}
+}

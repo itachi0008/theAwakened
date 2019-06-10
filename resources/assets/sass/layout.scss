@@ -1,0 +1,66 @@
+body {
+  background-color: $bg_white;
+  margin: 0px;
+  font-family: $font;
+  @include breakpoint($pc){
+    background-color: $white;
+  }
+}
+
+//figure {
+// position: relative;
+// margin: 0;
+//  padding-top: 34.25%;
+//  overflow: hidden;
+
+//  > img {
+//    position: absolute;
+//    top: 0;
+//    left: 10%;
+//    width: 100%;
+//  }
+//}
+
+.body-container {
+  background-color: white;
+  margin: auto;
+}
+
+.layout-menu {
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.layout-content {
+  float: left;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .layout-menu {
+    display: block;
+    width: 100%;
+  }
+
+  .layout-content {
+    width: 100%;
+    @include transition(opacity 500ms ease-in);
+  }
+}
+
+.clear {
+  clear: both;
+}
+//Custom
+.mobile-only {
+  @include breakpoint($pc) {
+    display:none;
+  }
+}
+.desktop-only {
+  @include breakpoint($pc) {
+    display:block;
+  }
+  display:none;
+}

@@ -1,0 +1,104 @@
+<div class="content">
+    <div class="story-template">
+        <div class="story-template__story">
+            <div class="story-template__story-head">
+                <p><span>In</span>&nbsp;{{ sectionNames }}</p>
+                <h1>{{ story['headline'] }}</h1>
+                <div class="story-template__story-head__author">
+                    <div class="author-pic">
+                         <img class="author-image" src="{{focusedImageUrl(authorDetails['avatar-s3-key'],config['image-cdn'], [16,9], [], {w: 200})}}"/>
+                    </div>
+                    <div class="author-box">
+                        <p class="author-box__name">By {{story['author-name']}}</p>
+                        <p class="author-box_detail">{{ (story['first-published-at'] // 1000)|date('M d, Y') }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="story-template__story-headimage">
+                <img src="{{focusedImageUrl(story['hero-image-s3-key'],config['image-cdn'], [16,9], story['hero-image-metadata'], {w: 1000})}}" class="story-img"/>
+            </div>
+            <div class="story-template__story-recipe-preparation-box">
+                <ul>
+                    <li>Prep Time
+                        <br/>
+                        <span>{{story['metadata']['story-attributes']['preprationtime'][0]}} Minutes</span></li>
+                    <li>Cook Time
+                        <br/>
+                        <span>{{story['metadata']['story-attributes']['cookingtime'][0]}} Minutes</span></li>
+                    <li>Serving
+                        <br/>
+                        <span>{{story['metadata']['story-attributes']['servings'][0]}} Persons</span></li>
+                    <li>Difficulty Level
+                        <br/>
+                        <span>{{story['metadata']['story-attributes']['difficultylevel'][0]}}</span></li>
+                </ul>
+            </div>
+            {% for card in story['cards'] | slice(0,1)  %}
+                <div class="story-template__story-content-story-section">
+                       <div class="story-template__story-content-story-section__left">
+                          <ul> Ingredients
+                              {% for storyElement in card['story-elements'] %}
+                              {% for Elements in storyElement['story-elements'] %}
+                                  <li>{{Elements['text'] }}</li>
+                              {% endfor %}
+                              {% endfor %}
+                          </ul>
+                        </div>
+                        <div class="story-template__story-content-story-section__right">
+                             <p>Instructions</p>
+                             {% for storyElement in card['story-elements'] %}
+                              {% if storyElement['subtype'] == null %}
+                                  <p>{{ storyElement['text'] | raw }}</p>
+                              {% endif %}
+                            {% endfor %}
+
+                            {% for card in story['cards'] | slice(1) %}
+                              <div class="card {{ card['metadata']['attributes']['alignment'][0] }}">
+                                {% include "story/story_card" with {'storyCard': card } %}
+                              </div>
+                            {% endfor %}
+
+                        </div>
+                </div>
+            {% endfor %}
+
+            <div class="story-template__story-rate-recipe-section">
+                <div class="story-template__story-rate-recipe-section__tab">
+                    <ul class="tabs">
+                        <li class="tab-item tab-item--active"><a href="javascript:void(0)">Rate This Recipe</a></li>
+                    </ul>
+                </div>
+                <div class="story-template__story-rate-recipe-section__tab-content">
+                    <div class="story-template__story-rate-recipe-section__tab-content__imagebox">
+                        <img src="http://placehold.it/100x100">
+                    </div>
+                    <div class="story-template__story-rate-recipe-section__tab-content__ratenow js-rating-widget">
+                        <p><span class ="rater_count">{{ratingValues['rater-count']}}</span> People Rated This Recepie</p>
+                        <span class="unrated-stars" id="rating">
+                        <span data-rating="1" class="star">★</span>
+                        <span data-rating="2" class="star">★</span>
+                        <span data-rating="3" class="star">★</span>
+                        <span data-rating="4" class="star">★</span>
+                        <span data-rating="5" class="star">★</span>
+                        </span>
+                    </div>
+                    <div class="story-template__story-rate-recipe-section__tab-content__already-rated">
+                        <p>Average Rating</p>
+                        <div class="rated-stars">
+                            <span class="star-percentage">★★★★★</span>
+                            <span class="star-percentage star-percentage-rated" style="width:{{ratingValues['rating-percentage']}}%;">★★★★★</span>
+                        </div>
+                        <span class="rated-value">{{ratingValues['average-rating']}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- content -->
+
+<script>
+  var storyId = '{{ story['story-content-id'] }}';
+  var user_rating = "user_rating";
+  qtReady.push(function() { app.rating(storyId, user_rating); });
+</script>

@@ -1,0 +1,25 @@
+.home_fifth_story{
+	float: left;
+	width: 100%;
+}
+.home_fifth_story-container{
+	padding:0 15px ;
+	@include breakpoint($pc){
+      @include container();
+      margin-bottom: 20px;
+      padding:0;
+    }
+}
+.home_fifth_story-story{
+	@include span(12);
+	@include breakpoint($pc){
+      @include span(8);
+    }
+}
+.home_fifth_story-side{
+	@include span(12);
+	@include breakpoint($pc){
+      @include span(4);
+      float: right;
+    }
+}

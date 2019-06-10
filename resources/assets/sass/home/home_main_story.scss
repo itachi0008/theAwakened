@@ -1,0 +1,168 @@
+.home_main_story{
+	background-color: $bg_white;
+	@include breakpoint($pc){
+		@include container();
+		position: relative;
+	}
+}
+.hero-img-container{
+	text-align: center;
+	@include breakpoint($pc){
+		position: relative;
+	}
+}
+.home_main_story--img{
+	width: 100%;
+	height: auto;
+	background-image:$image_black_gr;
+}
+.home_main_story--heading{
+	color: $p_color;
+	margin-bottom: 20px;
+	@include breakpoint($pc){
+		font-size: $fontsize-halfJumbo;
+		color: $white;
+	}
+}
+.story_content{
+	padding:0 15px;
+	@include breakpoint($pc){
+		position: absolute;
+		bottom:30px;
+		width: 100%;
+		padding:0 30px;
+	}
+}
+.home_main_story--p{
+	line-height: $lineHeight-t;
+	font-size: $fontsize-medium;
+	color: $static_p;
+	margin-bottom: 20px;
+}
+.story_author{
+	font-weight: lighter;
+	font-size:$fontsize-smallest;
+	color:$static_p ;
+	margin-right: 4px;
+}
+.story_topic{
+	font-size:$fontsize-smallest;
+	color:$static_p ;
+	@include breakpoint($pc){
+		position: absolute;
+		top: -30px;
+		left: 30px;
+		font-size: $fontsize-smaller;
+		color: $border_color;
+	}
+}
+.comment_container{
+	// margin-top: 26px;
+	border-bottom: 1px solid #979797;
+	// padding: 10px 0;
+}
+.home_third_container{
+	margin-top: 50px;
+	border-bottom: 1px solid #979797;
+}
+.fourth_aside_container{
+	margin-top: 24px;
+	margin-bottom: 13px;
+	border-bottom: 1px solid #979797;
+}
+.home_third_comment_container{
+	margin-top: 49px;
+	border-top: 1px solid #979797;
+}
+.threecol_axiom_comment_container{
+	margin-top: 6px;
+}
+.three_col_comment_container{
+	margin: 10px 0;
+	border-top: 1px solid rgba(168, 168, 168, 0.36);
+	@include breakpoint($pc){
+		margin: 20px 0 0px 0;
+	}
+}
+.home_fifthcomment_container{
+	margin-top: 34px;
+	border-bottom: 1px solid #979797;
+}
+.axiom_comment_container{
+	margin-top: 15px;
+}
+.home_fifth1_comment_container{
+	// margin-top: 32px;
+	border-bottom: 1px solid #979797;
+	// padding: 10px 0;
+}
+.home_fifthdiv_comment_container{
+	border-bottom: 1px solid #979797;
+}
+.story_content .comment_container,.share_story .comment_container{
+	border: none;
+}
+.comment_container--count{
+	color: $gray_t;
+	font-size: $fontsize-smallest;
+	margin-right: 15px;
+}
+.comment_container--text{
+	color: $static_p;
+	font-size: $fontsize-sm;
+}
+.threedoticon{
+	background-image: url("threedot-g.svg");
+	padding: 10px;
+	float: right;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	margin-right: 15px;
+}
+
+.icon_wrapper{
+	float: right;
+	display: block;
+	padding: 5px;
+	.bulb{
+		background-image: url(icon-lightbulb.svg);
+		padding: 8px 6px;
+		background-repeat: no-repeat;
+		float: left;	
+	}
+	.comment_icon{
+		background-image: url(icon-chat-open.svg);	
+		padding: 8px;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		float: left;
+		background-size: 14px;
+		&--closed{
+			background-image: url(icon-chat-closed.svg);
+		}
+	}
+	.bookmark{
+		background-image: url(icon-bookmark-open.svg);
+		padding: 8px;
+		cursor: pointer;
+		background-repeat: no-repeat;
+		float: left;
+		&--closed{
+			background-image: url(icon-bookmark-closed.svg);
+		}
+	}
+	span{
+		font-size: 9px;
+		text-align: left;
+		float: left;
+		margin: 2px 7px 2px 2px;
+		display: block;
+	}
+}
+
+.content_wrapper{
+	height: auto;
+	@include breakpoint($pc){
+		height: 120px;
+	}
+}

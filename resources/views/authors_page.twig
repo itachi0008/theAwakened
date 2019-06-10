@@ -1,0 +1,45 @@
+{% extends "layout" %}
+{% block content %}
+<!--  <section class="container">
+ <div class="authors__title">Our Authors</div>
+ <article class="authors">
+    {% for author_info in authors %}
+        <div class="authors__grid">
+        <a href="/author/{{author_info['id']}}">
+       
+          <div class="authors__content">
+            <h5 class="authors__headline">{{author_info['name'] | trim }}</h5>
+          </div>
+        </a>
+          </div>     
+    {% endfor %}
+  </article>
+</section> -->
+  <div class="section_story-container">
+<section class="authorsPage-container">
+  <div class="authorsPage">
+    <h3>The Authors</h3>
+    <div class="authorsPage_list">
+      {% for authorList in authors %}
+      <div class="author_thumbnail">
+        <a href="/author/{{ authorList['id'] }}">
+
+
+      {% if authorList['avatar-url'] %}
+        <img class="authorPage_img" src="{{authorList['avatar-url']}}">
+        {% else %}
+        <img class ="authorPage_img" src="{{assetPath('default_author_display.svg')}}">
+      {% endif %}
+
+
+        <br><h5 class="authorsPage_list_name">{{ authorList['name'] }}</h5>
+          </a>
+      </div>
+      {% endfor %}
+    </div>
+     </div>
+</section>
+</div>
+
+
+{% endblock content %}

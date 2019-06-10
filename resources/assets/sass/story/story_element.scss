@@ -1,0 +1,235 @@
+.article_body{
+	float: left;
+	clear: both;
+	width: 100%;
+	.story-element-image img{
+		width: 100%;
+		@include breakpoint($pc){
+			padding: 0;
+		}
+	}
+	.story-element-text p{
+		padding: 0 22px;
+		margin-bottom: 12px;
+		color: $p_color;
+		word-wrap: break-word;
+		line-height: 22px;
+		float: left;
+		font-size: $fontsize-m;
+		line-height: 1.5;
+		@include breakpoint($pc){
+			padding: 0;
+			font-size:$fontsize-medium;
+		}
+	}
+	.story-elements h2{
+		padding: 0 22px;
+		word-wrap: break-word;
+		@include breakpoint($pc){
+			padding: 0;
+		}
+	}
+	.story-elements h3{
+		padding: 0 22px;
+		word-wrap: break-word;
+		float: left;
+		clear: both;
+		@include breakpoint($pc){
+			padding: 0;
+		}
+	}
+	.story-element-title h3{
+		padding: 0 22px;
+		@include breakpoint($pc){
+			padding: 0;
+		}
+	}
+	.story-element-youtube-video iframe{
+		width: 100%;
+		@include breakpoint($pc){
+			height: 431px;
+		}
+	}
+	.story-element-jsembed iframe{
+		width: 100%;
+		@include breakpoint($pc){
+			height: 431px;
+		}
+	}
+	.story-element-location  iframe{
+		height: 100px;
+		@include breakpoint($pc){
+			height: 350px;
+		}
+	}
+	.story-element-slideshow img{
+		width: 100%;
+	}
+	.js-slideshow-element figure figcaption{
+		background-color: rgba(0,0,0,0.6);
+		color: $white;
+		padding: 5px;
+		position: relative;
+	}
+	.story-element-blockquote{
+		padding:0 15px;
+		@include breakpoint($pc){
+			padding: 0;
+		}
+		blockquote {
+			border-left: 3px solid $deep-blue;
+			color:$deep-blue;
+			font-size: 14px;
+			font-weight: 500;
+			margin: 0;
+			padding: 2px 12px;
+			display: inline-block;
+			float: left;
+			margin: 10px 0;
+			@include breakpoint($pc){
+				font-size: $fontsize-larger;
+			}
+		}
+	}
+	.story-element-blockquote .attribution{
+		color: $deep-blue;
+		padding-left: 12px;
+		font-style: italic;
+		float: left;
+		clear: both;
+	}
+	.story-element-blurb {
+		padding:0 15px;
+		@include breakpoint($pc){
+			padding: 0;
+		}
+		blockquote {
+			border-bottom: 1px solid $static_p;
+			border-top: 1px solid $static_p;
+			border-left: medium none;
+			color: $gray_t;
+			float: left;
+			font-style: italic;
+			margin: 20px 0;
+			padding: 15px 0;
+			font-size: $fontsize-sm;
+			line-height: 1.8;
+			@include breakpoint($pc){
+				font-size: $fontsize-medium;
+				line-height: 1.5;
+			}
+		}
+	}
+	.story-element-bigfact{
+		padding:0 15px;
+		@include breakpoint($pc){
+			padding: 0;
+		}
+	}
+	.bigfact-title {
+		color: $deep-blue;
+		float: left;
+		font-size: $fontsize-sm;
+		font-weight: 900;
+		line-height: 1.5;
+		margin: 0 0 10px;
+		width: 100%;
+		@include breakpoint($pc){
+			font-size:$fontsize-medium;
+		}
+	}
+	.bigfact-description {
+		color: $p_color;
+		float: left;
+		font-size: 20px;
+		font-weight: 900;
+		line-height: 1.5;
+		margin: 0 0 20px;
+		width: 100%;
+	}
+
+	.story-element-quote {
+		padding: 0 15px;
+		@include breakpoint($pc){
+			padding: 0;
+		}
+		blockquote {
+			border: none;
+			color: $p_color;
+			font-size: $fontsize-sm;
+			font-weight: 300;
+			margin:15px 0;
+			padding: 12px 0 2px 45px;
+			@include breakpoint($pc){
+				font-size: $fontsize-larger;
+				padding: 12px 0 2px 45px;
+			}
+		}
+	}
+
+	.quote-img {
+		background-image:url("quote.svg");
+		background-size: contain;
+		width: 31px;
+		height: 47px;
+		float: left;
+		background-repeat: no-repeat;
+	}
+	.story-element-q-and-a{
+		float: left;
+		width: 100%;
+	}
+	.story-element-question .story-element-q-and-a{
+		color:$deep-blue;
+		font-weight: 900;
+		line-height: 1.5;
+		margin: 0 0 15px;
+		text-transform: none;
+		letter-spacing: 0;
+		font-weight: 500;
+		h2{
+			font-size: $fontsize-medium;
+		}
+		h3{
+			font-size:$fontsize-base
+		}
+	}
+	.story-element-q-and-a .answer{
+		width: 100%;
+		float: left;
+		font-weight: 500;
+		h2{
+			font-size: $fontsize-medium;
+		}
+		h3{
+			font-size: $fontsize-base;
+		}
+		h4{
+			font-size: $fontsize-base;
+		}
+		p{
+			font-size: $fontsize-base;
+		}
+	}
+	.story-element-image-gallery__image{
+		padding:0 15px;
+		@include span(6);
+		@include breakpoint($pc){
+			padding: 0 15px 15px 0;
+		}
+		img{
+			width: 100%;
+		}
+	}
+	.story-element-image-gallery__caption{
+		font-size: $fontsize-sm;
+		@include breakpoint($pc){
+			font-size: $fontsize-small;
+		}
+	}
+	.story-element-polltype>div{
+		float: left;
+		margin: 20px auto;
+		width: 100%;
+	}
+}

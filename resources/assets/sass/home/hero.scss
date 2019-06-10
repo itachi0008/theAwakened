@@ -1,0 +1,11 @@
+.heroimage{
+	padding: 0;
+	@include breakpoint($pc) {
+	}
+	img{
+		width: 100%;
+		height: auto;
+		
+
+	}
+}

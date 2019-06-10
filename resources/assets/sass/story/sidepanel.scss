@@ -1,0 +1,240 @@
+//side panel
+.sidepanel_container{
+	display: none;
+	@include breakpoint($pc){
+	display: block;
+	position: absolute;
+	visibility:hidden;
+	right: 5px;
+	top: 50%;
+	}
+
+}
+.side_bar_is_active{
+	visibility: visible;
+}
+
+.sidepanel_container{
+	width: 330px;
+	.sidepanel{
+		position: relative;
+	}
+	.sidepanel_head{
+		width: 100%;
+		float: left;
+		background-color: $deep-blue;	
+	}
+	.sidepanel_tabs{
+		position: relative;
+	}
+	.sidepanel_tab{
+		@include span(3)
+		background-size: 20px;
+	    background-repeat: no-repeat;
+	    padding: 22px;
+	    background-position: center;
+		cursor: pointer;
+	}
+}
+.side_panel_content_container{
+	background-color: $light-white;
+	float: left;
+    clear: both;
+    width: 100%;
+}
+.comments_side_tab{
+	background-image: url(comment-y.svg);
+}
+.ratings_side_tab{
+	background-image: url(comment-y.svg);
+}
+.actions_side_tab{
+	background-image: url(comment-y.svg);
+}
+.share_side_tab{
+	background-image: url(comment-y.svg);
+}
+.is_active{
+		border-bottom: $golden-yellow 6px solid ;
+	}
+//TAb Items
+
+.side_panel_content_item{
+	display: none;
+}
+.box_is_active{
+	display: block!important;
+}
+.side_bar_is_active .box_is_active{
+	min-height: 600px;
+}
+//Tab Item 1
+.sidebar_author_info_img{
+	border-radius: 100%;
+	width: 27px;
+	float: left;
+	margin-right: 12px;
+}
+.comments_side_tab__box{
+	padding: 16px;
+}
+.sidebar_comment_para{
+	font-size: $fontsize-small;
+	color: $p_color;
+	line-height: $lineHeight-s;
+    padding-left: 25px;
+    padding-top: 20px;
+}
+h6.story_published_date{
+	font-size: $fontsize-smaller;
+}
+//tab item2 
+.rating_sub_tab_item_box_content{
+	padding: 10px;
+	float: left;
+}
+.rating_sub_tab_item_box{
+	display: none;
+	float: left;
+}
+.subtab_active {
+    border-bottom: 1px solid $p_color;
+}
+.subtab_box_active{
+	display: block;
+}
+.rating_sub_tab{
+	width: 100%;
+    float: left;
+	border-bottom: 1px solid $border_color;
+}
+.rating_sub_tab_content{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.rating_comments_box{
+	float: left;
+	width: 100%;
+	padding: 5px 25px;
+}
+.rating_sub_button_container button{
+	border-radius: 25px;
+	background-color: $white;
+	color: $p_color;
+	padding: 8px 25px;
+	border: none;
+	float: right;
+    margin-left: 10px;
+    margin-top: 12px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+.rating_sub_tab_item{
+	font-size:$fontsize-sm;
+	color: $static_p;
+	float: left;
+	cursor: pointer;
+	padding: 14px 24px;
+	&:last-child{
+		float: right;
+	}	
+}
+.rating_sub_tab_comment{
+	float: left;
+	
+}
+.post_a_option{
+	margin-top: 15px;
+	padding: 8px 0 80px 0;
+	border-bottom:solid 1px $list_border; 
+	border-top: solid 1px $list_border;
+	float: left;
+	clear: both;
+	background: transparent;
+	width: 100%;
+} 
+
+//Tab item 3
+.share_side_tab__box{
+	padding: 30px 15px;
+}
+.share_content{
+	margin-bottom: 30px;
+	border: 1px solid $golden-yellow;
+	padding: 5px;
+}
+ul.action_sub_share {
+    width: 100%;
+    float: left;
+}
+.share_story_h4{
+	color:$b_color;
+	font-size:$fontsize-base;
+}
+
+
+//Tab item 4
+.actions_sub{
+	text-align: center;
+	h6{
+		color: $p_color;
+		margin: 18px 0;
+	}
+}
+.action_sub_share_item{
+	padding: 5px 15px;
+	border-radius: 25px;
+	border: 2px solid;
+	margin: 20px 50px;
+    cursor: pointer;
+}
+.share_item__facebook{
+    	border-color:#3b5998 ;
+    	color: #3b5998 ;
+    	background-image: url("fb.svg");
+    	background-repeat: no-repeat;
+    	background-position: 30px 3px;
+    	background-size: 30px;
+    	&:hover{
+    		background-color: #3b5998;
+    		color:$white;
+    	}
+
+    }
+	.share_item__google{
+	border-color:#dd4b39 ;
+    	color: #dd4b39 ;
+    	background-image: url("twitter-cl.svg");
+    	background-image: url("google-plus.svg");
+    	background-repeat: no-repeat;
+    	background-position: 30px 3px;
+    	background-size: 30px;
+    	&:hover{
+    		background-color: #dd4b39;
+    		color:$white;
+    	}
+
+    }
+	.share_item__twitter{
+	border-color:#55ACEE ;
+    	color: #55ACEE ;
+    	background-repeat: no-repeat;
+    	background-image: url("twitter-cl.svg");
+    	background-position: 30px 3px;
+    	background-size: 30px;
+    	&:hover{
+    		background-color: #55ACEE;
+    		color:$white;
+    	}
+
+    }
+	.share_item__embed{
+	border-color:#6c9ae2 ;
+    	color: #6c9ae2 ;
+    	&:hover{
+    		background-color: #6c9ae2;
+    		color:$white;
+    	}
+
+    }

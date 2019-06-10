@@ -1,0 +1,16 @@
+<div class="tag_page_container">
+	<h1 class="search_page_heading">Showing results for '{{ tag }}'</h1>
+	<div class="stories-list">
+	    <div class="load-more-results">
+	    {% include "tag/three_col_story"  %}
+	  	</div>
+	  {% if showLoadMore %}
+	    {% include "shared/load_more_stories" %}
+	  {% endif %}
+	</div>
+</div>
+<script type="text/javascript">
+  var storyTemplate = "list_collections_search" ;
+  var api ='/api/v1/search?fields={{ loadMoreFields }}&q={{ searchKey }}';
+  qtReady.push(function() { app.quintypeLoadMore($(".stories-list"), {limit: 3, offset: {{ storyCount }}}, api, storyTemplate); });
+</script>

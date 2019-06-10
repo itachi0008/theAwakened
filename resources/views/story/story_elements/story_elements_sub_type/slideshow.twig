@@ -1,0 +1,13 @@
+<div class="story-element-{{element['metadata']['type']}}">
+  <div class="image-slideshow-slider js-slideshow-element" >
+    {% set elements = element['story-elements'] %}
+      {% for element in elements %}
+        <div>
+         <figure>
+             <img src="{{focusedImageUrl(element['image-s3-key'], config['image-cdn'], [16,9], element['image-metadata'], {w: 900})}}"/>
+             <figcaption>{{element['title']}}</figcaption>
+          </figure>
+        </div>
+     {% endfor %}
+  </div>
+</div>

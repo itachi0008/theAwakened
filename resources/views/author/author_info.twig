@@ -1,0 +1,36 @@
+<section class="author_profile">
+    <div class="author_profile_container">
+      <div class="author_profile_content">
+       <!--  <div class="new_story_logout_container">
+          <a href="https://insurge.staging.quintype.com/login" target="_blank"><span class="desktop-only">Write an article</span></a>
+          <div class="setting_icon">
+            <div class="search_icon_tooltip">
+              <ul>
+                <li>Edit your interests</li>
+                <li>Help</li>
+                <li>Settings</li>
+                <li>Sign out</li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+      <!-- <img alt="{{ authorDetails['hero-image-attribution'] }}" title= "{{ story['hero-image-attribution'] }}" src="{{ focusedImageUrl(authorDetails['avatar-url'], [2,2], story['hero-image-metadata'],{'w': 128, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}"> -->
+        {% if authorDetails['avatar-url'] %}
+        <img class="authorPage_img" src="{{authorDetails['avatar-url']}}">
+        {% else %}
+        <img class ="authorPage_img" src="{{assetPath('default_author_display.svg')}}">
+      {% endif %}
+      <div class="wrapper1">
+        <span class="author_display_name"> {{ authorDetails['name'] | raw }}</span>
+        <span class="author_details_display"> {{authorDetails['bio']|replace({"moderator :": "", "Moderator :": "" }) | raw}}</span>
+        <br>
+         <span class="author_joinDate_display">  <time class="story_published_date" itemprop="datePublished" content="{{ dateIsoFormat( joiningDate // 1000) }}">Joined {% set timestamp = (joiningDate// 1000)|round(0, 'floor') %}{{ timestamp|date('M j, Y') }}</time></span>
+      </div>
+        <div class="author_social_link_container">
+            <a href="http://www.facebook.com" target="_blank"><span class="author_social_link author_facebook"></span></a>
+            <a href="{{ authorDetails['twitter-handle'] }}" target="_blank"><span class="author_social_link author_twitter"></span></a>
+        </div>
+      </div>
+    </div>
+</section>
+

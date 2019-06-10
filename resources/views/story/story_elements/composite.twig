@@ -1,0 +1,8 @@
+
+{% set elementSubtype = '/story/story_elements/story_elements_sub_type/'~element['subtype'] %}
+{% set elementMetatype = '/story/story_elements/story_elements_sub_type/'~element['metadata']['type'] %}
+{% if element['metadata']['type'] != null %}
+    {% include elementMetatype with {'element': element} %}
+{% else %}
+    {% include elementSubtype with {'element': element} %}
+{% endif %}

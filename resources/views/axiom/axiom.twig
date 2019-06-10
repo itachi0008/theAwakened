@@ -1,0 +1,93 @@
+<section class="axiom_page_container">
+	<div class="axiom_wrapper">
+		<div class="axiom_content_left">
+			<script>
+				document.write('<a href="' + document.referrer + '"><div class="goBackButton">return to article</div></a>');
+			</script>			
+			<img alt="{{ axiom['hero-image-attribution'] }}" title= "{{ axiom['hero-image-attribution'] }}" src="{{ focusedImageUrl(axiom['hero-image-s3-key'], [3,1.75], axiom['hero-image-metadata'],{'w': 640, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}">
+			<div class="axiom_subheadline">{{axiom['subheadline']}}</div>
+		</div>	
+
+		<div class="axiom_content_right">
+			<div class="social_share_axiompage">
+				<div class="axiom_share">Share</div>
+
+				{% set shareUrl = site_url ~ '/' ~ axiom['slug'] %}
+				<div class="fb-wrapper">
+					<a  title="Share on facebook" class="fb-xfbml-parse-ignore facebook social-share"
+					target="_blank"
+					href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}&amp;t={{ axiom['summary'] }}"
+					data-service="facebook"
+					data-social-media-type="facebook"
+					data-social-media-share-url="{{ shareUrl }}"
+					data-mobile-iframe="true">
+					<span class="social-share__icon social-share--facebook"></span>
+				</a>
+			</div>
+
+			<div class="tw-wrapper">
+				<a  title="Share on twitter" class="twitter social-share"
+				target="_blank"
+				href="https://twitter.com/intent/tweet?url={{ shareUrl }}&amp;text={{ axiom['headline'] | trim | url_encode  }}"
+				data-service="twitter"
+				data-social-media-type="twitter"
+				data-social-media-share-url="{{ shareUrl }}">
+				<span class="social-share__icon social-share--twitter"></span>
+			</a>
+		</div>
+	</div>
+
+	<div class="accordions_container">
+		<button class="accordion">Contexts</button>
+		<div class="panel">
+			<div class="accordion_tag__container">
+				{% for contexts in axiom['sections'] %}
+				<a>{{contexts['display-name']}}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		<button class="accordion">Actions <span class="accordion__count">17</span></button>
+		<div class="panel">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+
+		<button class="accordion">Insights <span class="accordion__count">17</span></button>
+		<div class="panel">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+		<button class="accordion">Related Axioms <span class="accordion__count">17</span></button>
+		<div class="panel">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+		<button class="accordion">Responses <span class="accordion__count">17</span></button>
+		<div class="panel responses__tab">
+			<!-- <div id="metype-container" class="iframe-container" data-metype-account-id="49" data-metype-host="https://metype-api.staging.quintype.com"></div>
+			<script type="text/javascript">talktype(function() {
+				talktype.commentWidgetIframe(document.getElementById("metype-container"));
+			});
+		</script> -->
+	</div>
+</div>		
+</div>
+</section>
+
+
+
+
+<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].onclick = function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.maxHeight){
+				panel.style.maxHeight = null;
+			} else {
+				panel.style.maxHeight = panel.scrollHeight + "px";
+			} 
+		}
+	}
+</script>

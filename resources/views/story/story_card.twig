@@ -1,0 +1,8 @@
+<div  class="story-card-view"
+      data-card-content-id="{{ storyCard['id'] }}"
+      data-card-version-id="{{ storyCard['content-version-id'] }}">
+      
+  {% for element in storyCard['story-elements'] %}
+    {% include 'story/story_elements' with {'storyElements': element} %}
+  {% endfor %}
+</div>

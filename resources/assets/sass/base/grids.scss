@@ -1,0 +1,98 @@
+@import "vendor/susy/susy";
+@import "vendor/breakpoint/breakpoint";
+
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  container: 1024px,
+  container-position: center,
+  columns: 12,
+  gutter-position: outside,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+$custom_grid:(
+  flow: ltr,
+  math: fluid,
+  output: float,
+  container: 1024px,
+  container-position: center,
+  columns: 12,
+  gutter-position: outside,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+$page_grid:(
+  flow: ltr,
+  math: fluid,
+  output: float,
+  container: 670px,
+  container-position: center,
+  columns: 12,
+  gutter-position: outside,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+@include layout($susy float outside);
+@include border-box-sizing;
+
+$phone: max-width 600px;//only for mob
+$tablet: min-width 768px;
+$pc: min-width 992px;
+$iphone: min-width 320px;
+.container {
+  @include breakpoint($pc) {
+    padding-left:0;
+    padding-right:0;
+  }
+  @include container;
+  padding: 0 5px;
+}
+
+
+
+

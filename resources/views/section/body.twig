@@ -1,0 +1,108 @@
+{% set firstStory = stories['items'][0]['story'] %}
+{% set secondStory = stories['items'][1]['story'] %}
+{% set thirdStory = stories['items'][2]['story'] %}
+{% set firstStoryImage = focusedImageUrl(firstStory['hero-image-s3-key'], [6,3], firstStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) %}
+{% set secondStoryImage = focusedImageUrl(secondStory['hero-image-s3-key'], [3,1], secondStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) %}
+{% set thirdStoryImage = focusedImageUrl(thirdStory['hero-image-s3-key'], [3,1], thirdStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) %}
+<section class="section_story">
+	<div class="section_story-container">
+		<div class="section_heading_wrapper">
+			<h1 class="section_main_heading">{{ sectionName }}</h1>
+		</div>
+		{% if firstStory  != "" %}
+		<div class="section_story_main_story">
+			<a href="/{{ firstStory['slug'] }}">
+				<div class="section_first-story section_first_story_content">
+					<img alt="{{ firstStory['hero-image-attribution'] }}" title= "{{ firstStory['hero-image-attribution'] }}" src="{{ focusedImageUrl(firstStory['hero-image-s3-key'], [6,3.5], firstStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}">
+					<div class="section_common_wide__content">
+						<h3>{{ firstStory['headline'] | length > 108 ? firstStory['headline'] | slice(0,105) ~ '...' : firstStory['headline']  }}</h3>
+						<p>{{ firstStory['subheadline'] | length > 200 ? firstStory['subheadline'] | slice(0,197) ~ '...' : firstStory['subheadline']  }}</p>
+
+					</div>
+					<div class="three_col_comment_container">
+						<a href="/"></a><a href="/author/{{ firstStory['author-id'] }}">
+						<span class="story_author"><span class="by-author-text">By</span> {{ firstStory['author-name'] }}</span></a>
+						<div class="icon_wrapper">
+							<div class="bulb"  id="bulb_{{ firstStory['story-content-id'] }}"></div> 
+							<span class="bulb_{{ firstStory['story-content-id'] }}"></span>
+							<div class="comment_icon" id="comment_{{ firstStory['story-content-id'] }}"></div>
+							<span class="comment_{{ story['story-content-id'] }}">
+                                {% if commentCount[0]['total_count'] == null %}
+                                0
+                                {% else %}
+                                   {{ commentCount[0]['total_count'] }}
+                                {% endif %}
+                                </span> 
+							<div class="bookmark" id="bookmark"></div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+		{% endif %}
+		{% if secondStory  != "" %}
+		<div class="section_second_story_aside">
+			<a href="/{{ secondStory['slug'] }}">
+				<div class="section_second_story_aside_story">
+					<img alt="{{ secondStory['hero-image-attribution'] }}" title= "{{ secondStory['hero-image-attribution'] }}" src="{{ focusedImageUrl(secondStory['hero-image-s3-key'], [3,1], secondStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}">
+					<div class="section_second_story_aside_content">
+						<div class="section_second_story_aside_content_text">
+							<h3>{{ secondStory['headline']  | length > 57 ? secondStory['headline'] | slice(0,57) ~ '...' : secondStory['headline'] }}</h3>
+							<p>{{ secondStory['subheadline'] | length >= 100 ? secondStory['subheadline'] | slice(0,97) ~ '...' : secondStory['subheadline'] }}</p>
+						</div>
+						<div class="three_col_comment_container">
+							<a href="/"></a><a href="/author/{{ secondStory['author-id'] }}">
+							<span class="story_author"><span class="by-author-text">By</span> {{ secondStory['author-name'] }}</span></a>
+							<div class="icon_wrapper">
+								<div class="bulb"  id="bulb_{{ secondStory['story-content-id'] }}"></div> 
+								<span class="bulb_{{ secondStory['story-content-id'] }}"></span>
+								<div class="comment_icon" id="comment_{{ secondStory['story-content-id'] }}"></div>
+								<span class="comment_{{ story['story-content-id'] }}">
+                                {% if commentCount[1]['total_count'] == null %}
+                                0
+                                {% else %}
+                                    {{ commentCount[1]['total_count'] }}
+                                {% endif %}
+                                </span> 
+								<div class="bookmark" id="bookmark"></div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{% if thirdStory  != "" %}
+				<a href="/{{ thirdStory['slug'] }}">
+					<div class="section_second_story_aside_story">
+						<img alt="{{ thirdStory['hero-image-attribution'] }}" title= "{{ thirdStory['hero-image-attribution'] }}" src="{{ focusedImageUrl(thirdStory['hero-image-s3-key'], [3,1], thirdStory['hero-image-metadata'],{'w': 1000, 'q': 60, 'fmt': 'pjpeg', 'auto': 'format'}) }}">
+						<div class="section_second_story_aside_content">
+							<div class="section_second_story_aside_content_text">
+								<h3>{{ thirdStory['headline']  | length > 57 ? thirdStory['headline'] | slice(0,57) ~ '...' : thirdStory['headline'] }}</h3>
+								<p>{{ thirdStory['subheadline'] | length >= 100 ? thirdStory['subheadline'] | slice(0,97) ~ '...' : thirdStory['subheadline'] }}</p>
+							</div>
+
+							<div class="three_col_comment_container">
+								<a href="/"></a><a href="/author/{{ thirdStory['author-id'] }}">
+								<span class="story_author"><span class="by-author-text">By</span> {{ thirdStory['author-name'] }}</span></a>
+								<div class="icon_wrapper">
+									<div class="bulb"  id="bulb_{{ thirdStory['story-content-id'] }}"></div> 
+									<span class="bulb_{{ thirdStory['story-content-id'] }}"></span>
+									<div class="comment_icon" id="comment_{{ thirdStory['story-content-id'] }}"></div>
+									<span class="comment_{{ story['story-content-id'] }}">
+                                	{% if commentCount[2]['total_count'] == null %}
+                                	0
+                                	{% else %}
+                                     {{ commentCount[2]['total_count'] }}
+                                	{% endif %}
+                                	</span> 
+									<div class="bookmark" id="bookmark"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{% endif %}
+			</div>
+			{% endif %}
+		</div>
+	</section>
+
+	{% include "/section/three_col_story" with {'stories': stories}  %}

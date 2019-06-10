@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab:500,700');
+$prompt:'Lato', sans-serif;
+$font:'Lato', sans-serif;
+$lato:'Lato', sans-serif;
+$lora:'Lora', serif;
+$zilla:'Zilla Slab', serif;
+
+// Font Weights
+$light: 300px;
+$regular: 400px;
+$medium: 500px;
+$semi-bold: 600px;
+$bold: 700px;
+$extra-bold: 900px;
+
+$fontsize-tiny:       9;
+$fontsize-micro:      10;
+$fontsize-smaller:    11px;
+$fontsize-sm:    12px;
+$fontsize-smallest:    13px;
+$fontsize-small:      15px;
+$fontsize-base:       16px;
+$fontsize-m:          17px;
+$fontsize-medium:     18px;
+$fontsize-tw:         20px;
+$fontsize-large:      21px;
+$fontsize-larger:     22px;
+$fontsize-story-main:   24px;
+$fontsize-larger-x:   25px;
+$fontsize-larger-xx:  28px;
+$fontsize-largest:    30px;
+$fontsize-halfJumbo:  40px;
+$fontsize-largeJumbo:  44;
+$fontsize-jumbo:    72;
+
+$lineHeight-base: 1.5;
+$lineHeight-tight: 1.35;
+$lineHeight-tighter: 16px;
+$lineHeight-s:20px;
+$lineHeight-p:24px;
+$lineHeight-t:22px;
+$lineHeight-m:21px;
+$lineHeight-mobile:28px;
+$lineHeight-wide:30px;
+$lineHeight-banner-mobile:34px;
+$lineHeight-banner-tablet:38px;
+$lineHeight-banner:54px;
+
+$input_border:1px;
+$border_radius:3px;
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 100%;
+  position: relative;
+  min-height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $prompt;
+  font-weight: $regular;
+  font-size:em($fontsize-base);
+  line-height: $lineHeight-base;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  font-weight: $regular;
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+figure { margin: 0}
+
+input {
+  font-weight: $regular;
+  letter-spacing: 1px;
+  border: 0;
+  outline: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}

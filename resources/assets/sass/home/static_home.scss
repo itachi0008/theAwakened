@@ -1,0 +1,133 @@
+.static_home-container{
+	background-color:$bg_white;
+	padding-top: 208px;
+	@include breakpoint ($tablet){
+		padding-top: 14px;
+		background-color: $white;
+	}
+	@include breakpoint ($pc){
+		padding-top: 0px;
+		background-color: $white;
+	}
+
+	.static_home{
+		text-align: center;
+		padding:0 5px;
+		@include breakpoint ($pc){
+		@include container();
+		padding:0;
+		}
+		img{
+			width: 40%;//width:100%;
+			height: auto;
+			@include breakpoint($pc){
+				margin:24px 0;
+			}
+		}
+		&--para{
+			text-align: center;
+			font-size:$fontsize-medium;
+			color: $static_p;
+			line-height: $lineHeight-wide;
+			margin-bottom: 30px;
+			padding: 0px 10px;
+			@include breakpoint($pc){
+				text-align: center;
+			}
+
+		}
+		.login-button-content{
+			text-align: center;
+			float: none;
+			margin: 10px 0 60px 0;
+		}
+		.last__para{
+			margin-bottom: 0px;
+			@include breakpoint ($pc){
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+.bold_text{
+	@include breakpoint($pc){
+	color: $b_color;
+	}
+}
+//Semore Mobile
+.seemore_all_topic{
+	
+	width: 100%;
+	text-align: center;
+	button{
+		outline: none;
+		text-transform: uppercase;
+		padding:12px 24px;
+		border-radius: 30px;
+		color: $p_color;
+		font-size: $fontsize-small;
+		background-color: $white;
+		border: 2px $border_color solid;
+		margin: 60px 0 46px 0;
+	}
+}
+//See more end 
+
+//SectionList Desktop
+.section_list-container{
+	background-color: $bg_white;
+	padding-bottom: 53px;
+	@include breakpoint($pc){
+		background-color: $white;
+	}
+	.section_list{
+		text-transform: uppercase;
+		color: $blue_text;
+		font-size: $fontsize-base;
+		@include container();
+		&__item{
+			width: 100%;
+			border-bottom: 1px solid $list_border;
+			padding:6px 0;
+			display: inline-flex;
+			& a:nth-child(2){
+			    padding: 0px 150px;
+				li{
+                   border-left: 1px solid $list_border;
+				   border-right: 1px solid $list_border;
+				   padding: 0px 15px;
+				}
+			}
+		}
+		& ul:first-child{
+			border-top: 1px solid $list_border;
+		}
+		&__items{
+
+			img{
+				padding: 0 5px;
+			}
+			&--count{
+				font-size:$fontsize-smallest ;
+				color: $gray_text;
+			}
+			&--text{
+				font-size:$fontsize-smaller ;
+				color: $border_color;
+				padding: 0 25px 0 15px;
+			}
+			&:nth-child(3){
+				padding: 0px 25px;
+			}
+		}
+	}
+}
+.comnt_icon{
+	background-image: url("comment-y.svg");
+	background-size: 20px;
+    background-repeat: no-repeat;
+    padding: 10px;
+    display: inline-block;
+    margin:0px 5px;
+}
+//SectionList End

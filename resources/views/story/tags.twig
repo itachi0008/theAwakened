@@ -1,0 +1,5 @@
+	{% for tag in tags %}
+  		<a class="story_page_tag" href="/tag?tag={{ tag['name'] }}">
+    		{{ tag['name'] }}
+  		</a>
+	{% endfor %}		

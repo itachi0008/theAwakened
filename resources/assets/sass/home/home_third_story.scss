@@ -1,0 +1,132 @@
+.home_third-container{
+	@include breakpoint($pc){
+		@include container();
+	}
+}
+.home_third-story-subject{
+		background-color: $deep-blue;
+		padding: 17px 30px 42px 30px;
+		@include span(12);
+		@include breakpoint($pc){
+			@include span(4);
+		}
+		h6{
+			font-size: $fontsize-smallest;
+			color: $golden-yellow;
+			letter-spacing: 1.4px;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+		.side_bar__subject{
+			margin-bottom: 10px;
+			color: $white;
+			text-transform: uppercase;
+		}
+		.side_bar__item{
+			font-size: $fontsize-base;
+			line-height: 1em;
+		}
+		.side_bar__item__count{
+			font-size: $fontsize-smallest;
+			padding-bottom: 8px; 
+		}
+		span{
+			font-size: $fontsize-smallest;
+			color: $white;
+			margin-top: 30px;
+		}
+	}
+.home_third-story{
+	background-color: $bg_white;
+		@include span(12);
+		@include breakpoint($pc){	
+			background-color: $white;
+			@include span(8);
+			margin-right: 1.69492%;
+		}
+	  img{
+	  	width: 100%;
+	  	height: auto;
+	  	}
+	  h3{
+	  	font-size: $fontsize-larger-x;
+	  	color: $p_color;
+	  	margin-bottom: 20px;
+	  	@include breakpoint($pc){
+			font-size: $fontsize-larger-x;
+			margin-bottom: 0;
+		}
+	  }
+	  p{
+	  	color: $static_p;
+	  	font-size: $fontsize-medium;
+	  	line-height: $lineHeight-t;
+	  	margin-bottom: 20px;
+	  	@include breakpoint($pc){
+			margin-bottom:0;
+		}
+	  }
+	}
+.home_third__content{
+	padding: 0 15px 25px 15px;
+	@include breakpoint($pc){
+		padding:  2px 0;
+	}
+	h3{
+	  	color: $p_color;
+	  	margin-bottom: 20px;
+	  	@include breakpoint($pc){
+			font-size: $fontsize-larger;
+			margin: 0px;
+			padding: 0px;
+		    height: 3em;
+	  	    line-height: 1.5em;
+		}
+	  }
+	  p{
+	  	color: $static_p;
+	  	font-size: $fontsize-medium;
+	  	line-height:$lineHeight-p;
+	  	margin-bottom: 20px;
+	  	@include breakpoint($pc){
+			margin-bottom:8px;
+			height:2.8em;
+	  	    line-height:1.4em;		
+	    }
+	  }
+}
+.home_third_story_topic{
+	font-size: $fontsize-smaller;
+	color: $input_border_color;
+	text-transform: capitalize;
+}
+.home_common_wide__content{
+	padding: 0 15px 25px 15px;
+	@include breakpoint($pc){
+		padding: 0 0px 25px 0px;
+	}
+	h3{
+	  	font-size: $fontsize-larger-x;
+	  	color: $p_color;
+	  	margin-bottom: 20px;
+	  	line-height: 1.5em;
+	  	@include breakpoint($pc){
+			font-size: $fontsize-larger;
+			margin-bottom: 0px;
+			height: 3em;
+		}
+	  }
+	  p{
+	  	color: $static_p;
+	  	font-size: $fontsize-medium;
+	  	line-height:$lineHeight-p;;
+	  	overflow: hidden;
+	  	// padding: 10px 0px;
+	  	// margin-bottom: 20px;
+	  	@include breakpoint($pc){
+			margin-bottom:0px;
+			height:3em;
+	  	    line-height:1.5em;		
+	    }
+	  }
+}

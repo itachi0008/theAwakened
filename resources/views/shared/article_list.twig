@@ -1,0 +1,11 @@
+{% for story in stories %}
+  <a href="/{{ story['slug'] }}">
+    <div class="storyWrapper">
+      <h3>{{ story["headline"] }}</h3>
+      <p>{{ story["summary"] }}</p>
+    </div>
+    <div class="heroImageWrapper">
+      <img src="{{focusedImageUrl(story['hero-image-s3-key'], [16,9], story['hero-image-metadata'], {w: 350})}}"/>
+    </div>
+  </a>
+{% endfor %}

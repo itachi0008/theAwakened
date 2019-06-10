@@ -1,0 +1,140 @@
+//col 3 contentthree_col_story
+.three_col_story{
+	@include breakpoint($phone){
+		width: 100%;
+		float: left;
+	}
+	@include breakpoint($pc){
+		max-width: 1024px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+.staraxiomiconTwo{
+	margin-left: 0px;
+	padding: 10px 0px;
+}
+.three_col_story-container{
+	padding:0 15px;
+	width: 100%;
+	@include breakpoint($pc){
+		padding: 0;
+	}
+}
+.three_col_story-container-first-section{
+	max-width: 1024px;
+	padding:0 15px ;
+	margin: 0 auto;
+	@include breakpoint($pc){
+		padding: 0;
+	}
+}
+.three_col_stories_one{
+	@inlcude span(12);
+	&:first-child{
+		padding-top: 25px;
+	}
+	@include breakpoint($pc){
+		width: 32.20339%;
+		padding: 25px 0 25px 0;
+		float: left;
+		&:nth-child(2){
+			margin-left: 1.694915%;
+			margin-right: 1.694915%;
+			}&:nth-child(5){
+				margin-left: 1.694915%;
+				margin-right: 1.694915%;
+			}
+		}
+	}
+
+	.home_axiom-container_one{
+		background-color: $light-white;
+		padding: 4px 24px 28px 28px;
+		p{
+			font-size: 14px; 
+			color: #53595a;
+			line-height: 1.9em;
+			height: 7.5em;
+			overflow: hidden;
+			margin: 18px 0;
+		}
+	}
+
+	.home_axiom-container_two{
+		background-color: $light-white;
+		padding: 4px 24px 28px 28px;
+		display: inline-block;
+		width: 100%;
+		p{
+			font-size: 14px; 
+			color: #53595a;
+			line-height: 1.9em;
+			height: 7.5em;
+			overflow: hidden;
+			margin: 18px 0;
+		}
+	}
+	.staraxiomiconThree{
+		margin-left: 0px;
+		padding: 10px 0px;
+	} 
+
+	.home_axiom-container_three{
+		background-color: $light-white;
+		padding: 4px 24px 28px 28px;
+		p{
+			font-size: 14px; 
+			color: #53595a;
+			line-height: 1.9em;
+			font-family: $font;
+			height: 7.5em;
+			overflow: hidden;
+			margin: 18px 0;
+		}
+	}
+	.three_col_stories_one_story{
+		h2{
+			font-size: 18px;
+			font-weight: 600;
+			line-height: 1.17;
+			letter-spacing: 1px;
+			text-align: left;
+			color: #000000;
+			margin: 5px 0 10px 0;
+			@include breakpoint($pc){
+				padding: 0;
+			}
+		}
+		p{
+			font-size: 14px;
+			line-height: 1.55;
+			text-align: left;
+			color: #7a7a7a;
+		}
+		img{
+			width: 100%;
+			height: auto;
+		}
+		span{
+			padding: 0px;
+
+		}
+	}
+	.story_author{
+		font-weight: 700;
+		color: #545454;
+	}
+	.by-author-text{
+		font-weight: 500;
+		margin-right: 5px;
+	}
+	.img_attr-text {
+		margin: auto;
+		width: 25px;
+	}
+
+	.three_col_story_first_section{	 
+		width: 100%;
+		float: left;
+	}

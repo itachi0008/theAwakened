@@ -1,0 +1,7 @@
+{% for reference in element %}
+  <div class="card__element--reference">
+    <h3>{{ reference.metadata.name }}</h3>
+    <a href="{{ reference.metadata.url }}">{{ reference.metadata.url }}</a>
+    <p>{{ reference.metadata.description }}</p>
+  </div>
+{% endfor %}

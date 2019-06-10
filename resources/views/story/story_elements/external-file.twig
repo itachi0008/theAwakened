@@ -1,0 +1,8 @@
+<div class="story-element-{{element['type']}}">
+{% set elementSubtype = '/story/story_elements/story_elements_sub_type/'~element['subtype'] %}
+    {% if element['subtype'] != null %}
+        {% include elementSubtype with {'element': element} %}
+    {% else %}
+        <div class="story-element-{{ element['type'] }}"></div>
+    {% endif %}
+</div>

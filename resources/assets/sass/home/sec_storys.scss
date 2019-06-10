@@ -1,0 +1,49 @@
+.sec_story{
+	margin-top: 10px;
+}
+.story-topic{
+ margin-bottom: 70px;
+}
+
+.story-topic-fourth{
+ margin-bottom: 54px;
+}
+.staraxiomicon{
+   margin-left: 22px;
+   padding-top: 18px;
+}
+.axiomicon{
+	background-image: url("axiom_icon.svg");
+	background-size: 15px;
+    background-repeat: no-repeat;
+    padding: 7px;
+    display: inline-block;
+    margin:0px 13px;
+}
+.axiomone{
+	margin-top: 10px;
+}
+.axiom_heading{
+	color: $axiom_headline;
+}
+.axiom_container{
+	margin-top:33px;
+}
+.sec_story_container{
+	@include breakpoint($pc){
+		@include container();
+	} 
+}
+.sec_story_text{
+	@include breakpoint($pc){
+		@include span(8);
+	} 
+}
+.sec_axiom_container{
+	background-color: #edf0f1;
+	@include breakpoint($pc){
+		@include span(4);
+		margin-top: 6px;
+		float: right;
+	}
+}

@@ -1,0 +1,20 @@
+<section class="photo-story">
+<div class="photo-story-image-slider js-photo-story-slider">
+  {% for image in getPhotoStoryImages(story) %}
+  <div>
+    <figure>
+      <img src="{{focusedImageUrl(image['image-s3-key'] ,config['image-cdn'], [16,9], image['image-metadata'],{w:500} )}}"/>
+      <figcaption>{{image['title']}}</figcaption>
+    </figure>
+  </div>
+  {% endfor %}
+</div>
+<div class="story-body">
+  {% for card in story['cards'] %}
+  <div class="card {{ card['metadata']['attributes']['alignment'][0] }}">
+    {% include "story/story_card" with {'storyCard': card } %}
+  </div>
+  {% endfor %}
+  {% include "story/tags" with {'tags': story['tags']} %}
+</div>
+</section>

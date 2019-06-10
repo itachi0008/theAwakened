@@ -1,0 +1,35 @@
+
+{% set linkedStoryId = element['metadata']['linked-story']['id'] %}
+
+{% for also in alsoread %}
+	{% if also['linked-story-id'] == linkedStoryId %}
+		{% if also['hero-image-caption'] == 'insight' %}
+		
+		<div class="display_grid">
+			<span class="display_headline"> INSIGHT</span>
+			<span class="story_righticon__insight"></span>
+			<span class="story_page_axiom">{{ also['subheadline'] | raw }}</span>
+		</div>
+ 
+		{% elseif  also['hero-image-caption'] == 'axiom' %}
+		<a href="/axiom/{{also['slug']}}"> 
+		<div class="display_grid">
+		<span class="display_headline"> AXIOM</span>
+		
+			<span class="story_righticon__axiom"></span>
+			<span class="story_page_axiom">{{ also['subheadline'] | raw }}</span>
+		</div>
+		</a>	
+		{% elseif also['hero-image-caption'] == 'action' %}
+		
+		<div class="display_grid">
+			<span class="display_headline"> ACTION</span>
+			<span class="story_righticon__action"></span>
+			<span class="story_page_axiom">{{ also['subheadline'] | raw }}</span>
+		</div>
+	 	
+		{% endif %}
+	{% endif %}	
+{% endfor %}
+	
+ 

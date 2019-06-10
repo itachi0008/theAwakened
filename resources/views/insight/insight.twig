@@ -1,0 +1,121 @@
+<section class="axiom_page_container">
+	<div class="axiom_page_wrapper">
+		<h1>{{insight['headline']}}</h1>
+		<h2>INSIGHT</h2>
+	</div>
+	<div class="insight_page_insight">
+		<p>{{insight['subheadline']}}</p>
+	</div>
+	<div class="axiom_page_rate">
+		<h4>RATE</h4>
+		<div class="axiom_rate_container">
+			<div class="add_insightful"><button>Insightful </button> {# <span>(99)</span> #}</div>
+			<div id="insightful" class="axiom_rating_comments_box">
+						<img class="axiom_rating_user_info_img" src="https://pbs.twimg.com/profile_images/876503310097817600/ED83HGik_400x400.jpg">
+					<span class="axiom_user_name">Nafeez Ahmed</span>
+				<input type="text" name="" class="post_a_option" placeholder="Add an optional comment to your rating…">
+				<div class="rating_sub_button_container">
+					<button>Cancel</button>
+						<button>Rate</button>
+				</div>
+			</div>
+			<div class="add_need_improvment"><button>Needs improvement</button>{#  <span>(99)</span> #}</div>
+				<div id="need_improvment" class="axiom_rating_comments_box">
+							<img class="axiom_rating_user_info_img" src="https://pbs.twimg.com/profile_images/876503310097817600/ED83HGik_400x400.jpg">
+						<span class="axiom_user_name">Nafeez Ahmed</span>
+					<input type="text" name="" class="post_a_option" placeholder="Add an optional comment to your rating…">
+					<div class="rating_sub_button_container">
+						<button>Cancel</button>
+							<button>Rate</button>
+					</div>
+				</div>
+				{# <span class="action_add_ajax">ThankYou.. Your Comment Added</span> #}
+		</div>
+	</div>
+	<div class="axiom_page_article_container">
+		<div class="axiom_page_article_tabs">
+			<button class="axiom_page_heading axiom_page_heading_active" onclick="opencontent(event, 'related_article_tab_content')">Articles</button>
+			<button class="axiom_page_heading" onclick="opencontent(event, 'insightful_tab_content')">Insightful</button>
+			<button class="axiom_page_heading" onclick="opencontent(event, 'need_improvement_tab_content')">Needs <br class="mobile-only"> improvement</button>
+		</div>
+		<!--Related Article-->
+		<div id="related_article_tab_content" class="axiom_page_article_tab_content">
+			<div class="axiom_page_article">
+				<h3>Inside the secret Trump lobby that wants to profit from the break up.</h3>
+				<h6>Nafeez Ahmed</h6>
+			</div>
+			<div class="axiom_page_article">
+				<h3>Inside the secret Trump lobby that wants to profit from the break up.</h3>
+				<h6>Nafeez Ahmed</h6>
+			</div>
+			<div class="axiom_page_article">
+				<h3>Inside the secret Trump lobby that wants to profit from the break up.</h3>
+				<h6>Nafeez Ahmed</h6>
+			</div>
+			<span class="axiom_page_sellall">see all</span>
+		</div>
+		<!--Insightful-->
+		<div id="insightful_tab_content" class="axiom_page_article_tab_content">
+			<div class="axiom_page_article">
+				<h3>Inside the secret Trump lobby that wants to profit from the break up.</h3>
+				<h6>NA</h6>
+			</div>
+			<div class="axiom_page_article">
+				<h3>Inside the secret Trump lobby that wants to profit from the break up.</h3>
+				<h6>NA</h6>
+			</div>
+			<div class="axiom_page_article">
+				<h3>Inside the secret Trump lobby that wants to profit from the break up.</h3>
+				<h6>NA</h6>
+			</div>
+		</div>
+		<!--Need improvement-->
+		<div id="need_improvement_tab_content" class="axiom_page_article_tab_content">
+			<div class="axiom_page_article">
+				<h3>Inside the secret Trump lobby that wants to profit from the break up.</h3>
+				<h6>KD</h6>
+			</div>
+			<div class="axiom_page_article">
+				<h3>Inside the secret Trump lobby that wants to profit from the break up.</h3>
+				<h6>KD</h6>
+			</div>
+			<div class="axiom_page_article">
+				<h3>Inside the secret Trump lobby that wants to profit from the break up.</h3>
+				<h6>KD</h6>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.add_insightful').click(function() {
+    $("#insightful").slideToggle();
+  });
+  $('.add_need_improvment').click(function() {
+    $("#need_improvment").slideToggle();
+  });
+});
+</script>
+<script type="text/javascript">
+function opencontent(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("axiom_page_article_tab_content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("axiom_page_heading");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace("axiom_page_heading_active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " axiom_page_heading_active";
+}
+</script>

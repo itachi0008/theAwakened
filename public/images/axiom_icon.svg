@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon - Axioms</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="8 0 9.78017778 4.62515556 14.4155022 3.16899556 12 7.48032 16 10.2896889 11.2077333 11.04064 11.56032 16 8 12.6251378 4.43968 16 4.79223111 11.04064 0 10.2896889 4 7.48032 1.58451556 3.16899556 6.21982222 4.62515556"></polygon>
+    </defs>
+    <g id="mobile-designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="profile-other" transform="translate(-166.000000, -316.000000)">
+            <g id="Group-2-Copy-4" transform="translate(25.000000, 314.000000)">
+                <g id="Icon---Axioms" transform="translate(139.000000, 0.000000)">
+                    <circle id="Oval" cx="10" cy="10" r="10"></circle>
+                    <g id="Color-blue" stroke-width="1" fill-rule="evenodd" transform="translate(2.000000, 2.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g id="Color-yellow" mask="url(#mask-2)" fill="#C3B612">
+                            <g transform="translate(-2.000000, -2.000000)" id="Rectangle-3">
+                                <rect x="0" y="0" width="20" height="20"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

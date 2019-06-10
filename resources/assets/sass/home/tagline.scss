@@ -1,0 +1,74 @@
+.tag-line-container{
+	background: $tag_bg;
+	color: $white;
+	width: 100%;
+	margin-top: -7px;
+	@include breakpoint($pc){
+		width: 100%;
+		max-width: 320px;
+		position: absolute;
+		right:15%;
+		top: 6%;
+		background: transparent;
+	}
+	@include breakpoint($tablet){
+		width: 100%;	
+	}
+	.tag-line{
+		position: absolute;
+		width: 100%;
+		@include breakpoint($pc){
+			position: relative;
+		}
+		span{
+			cursor: pointer;
+			font-size: $fontsize-smallest;
+			@include breakpoint($pc){
+				font-size:$fontsize-smaller;
+			}
+		}
+		h2{
+			font-size: 20px;
+			padding: 15px 10px;
+			font-family: $zilla;
+			margin: auto;
+			max-width: 300px;
+			background: $white;
+			color: #1c598b;
+			@include breakpoint($pc){
+				font-size:$fontsize-large;
+				line-height: 27px;
+				padding: 15px 17px;
+				margin: 0 auto;
+				background: $tag_bg;
+				color: $white;
+				position: sticky;
+				text-align: left;
+			}
+		}
+		p{
+			font-size: 12px;
+			line-height: 22px;
+			@include breakpoint($pc){
+				font-size:16px;
+			}
+		}
+	}
+	.search_article{
+		border: none;
+		padding: 15px 0;
+		width: 80%;
+		background: transparent;
+		font-size: $fontsize-larger-xx;
+		color: $gray_text;
+		background:transparent;
+	}
+}
+.cta_button_text_container{
+	p{
+		margin-top: 100px;
+		@include breakpoint($pc){
+			margin-top: 0;
+		}
+	}
+}

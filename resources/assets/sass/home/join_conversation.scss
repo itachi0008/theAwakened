@@ -1,0 +1,78 @@
+.join_conversation{
+	width: 100%;
+	@include breakpoint($pc){
+		@include container();
+	}
+
+}
+.join_conversation-container{
+	background-color: $golden-yellow;
+	@include span(12);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	@include breakpoint($pc){
+		margin-top: 17px;
+		margin-bottom:0px;
+		@include span(12);
+	}
+}
+.join_conversation__img{
+	width: 100%;
+	@include span(12);
+	@include breakpoint($pc){
+		@include span(3);
+	}
+}
+.join_conversation__content{
+	padding: 13px;
+	@include span(12);
+	@include breakpoint($pc){
+		@include span(8);
+	}
+	h2{
+		font-size:$fontsize-largest;
+		color:$white;
+		letter-spacing: 1.5px;
+		@include breakpoint($pc){
+		font-size:$fontsize-halfJumbo;
+		letter-spacing: 2px;
+		margin-left: 46px;
+		margin-bottom: 27px;
+		}
+	}
+	p{
+		font-size: $fontsize-small;
+		color: $p_color;
+		line-height:$lineHeight-s; 
+		letter-spacing: 1.1px;
+		@include breakpoint($pc){
+		font-size:$fontsize-small;
+		float: left;
+		margin-left: 46px;
+		}
+	}
+	button{
+		float: right;
+		border: none;
+		border-radius: 20px;
+		background-color: $black;
+		color: $white;
+		padding: 10px 20px;
+		font-size: $fontsize-small;
+		margin-top: 25px;
+		@include breakpoint($pc){
+			margin-top: 0;
+			margin-bottom: 25px;
+			padding: 5px 35px;
+			background-color: transparent;
+			border: 2px solid $p_color;
+			color: $p_color;
+		}
+	&:hover{
+		background-color: $p_color;
+		color: $white;
+	}
+
+	}
+
+}

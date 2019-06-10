@@ -1,0 +1,134 @@
+<div class="header-container">
+	<div class="header">
+		{% include "/shared/menu" %}
+
+		<a href="/">
+			<div class="logo"><?xml version="1.0" encoding="UTF-8"?>
+				{% include "/shared/logo" %}
+			</div>
+		</a>
+		<div class="tooltip_search">
+			<form id="search_mini_form" action="/search" method="get">
+				<input class="search_article" placeholder="Search Insurge" value="" name="q" id="search" maxlength="128" autocomplete="off" type="text">
+				<button class="search" type="submit" value="" id="btt"></button>
+			</form>
+		</div>	
+		<div class="header_item_container">
+			<div id="loggedin" class="login-header-container" style="display: none;">
+				<div class="search-icon"></div>
+				<div class="bell-icon"></div>
+				<div class="profile-thumbnail"><img id="insurge-avatar" src>
+					<div class="logout_tooltip_container">
+						<ul class="logout_tooltip">
+							<a id="logout_link">
+								<li>Logout</li>
+							</a>
+							<li>Help</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="loggedout" class="header_item_container" style="display: none;">
+				<div class="search-icon">
+					<span class="search-tolltip-icon"></span>
+				</div>
+				<div class="header-login-button-container">
+					<span class="login-js-pushpull">Sign up / Sign in</span>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", '/api/v1/members/me', false); // false for synchronous request
+    xmlHttp.send( null );
+    var data = xmlHttp.responseText;
+    var res = JSON.parse(data);
+    console.log(xmlHttp.status);
+    if(xmlHttp.status == '403')
+    {
+    	document.getElementById("loggedin").style.display = "none"; 
+    	document.getElementById("loggedout").style.display = ""; 
+    }
+    else
+    {
+    	document.getElementById("loggedin").style.display = ""; 
+    	document.getElementById("loggedout").style.display = "none"; 
+    	$('#insurge-avatar').attr("src", res['member']['avatar-url']);
+    	//console.log(res['member']['avatar-url']);
+    }
+</script>
+
+
+<div class="push_pull_menu push_pull_menu_not_active">
+	{% for items in sections %}
+		<a href="/section/{{ items['slug'] }}" target="_blank">
+			<div class="push_pull_menu_content">	{{ items['display-name'] }}</div>
+		</a>
+	{% endfor %}
+</div>
+<script type="text/javascript">
+	$(window).scroll(function(){
+		if ($(window).scrollTop() >= 5) {
+			$('.header-container').addClass('fixed-header');
+		}
+		else {
+			$('.header-container').removeClass('fixed-header');
+		}
+	});
+
+</script>
+
+<div class="push_pull_social">
+	<span>Sign in with...</span>
+	<ul class="login-social">
+		<a href="https://insurge-web.staging.quintype.io/login?auth-provider=facebook&remote-host=https://insurge-web.staging.quintype.io"><li class="facebook_login">Facebook</li></a>
+		<a href="https://insurge-web.staging.quintype.io/login?auth-provider=twitter&remote-host=https://insurge-web.staging.quintype.io"><li class="twitter_login">Twitter</li></a>
+		<a href="https://insurge-web.staging.quintype.io/login?auth-provider=google&remote-host=https://insurge-web.staging.quintype.io"><li class="google_plus_login">Google plus</li></a>
+	</ul>
+</div>
+{# social login sidemenu #}
+<script type="text/javascript">
+	$(document).ready( function(){
+		$('.header-login-button-container').click( function() {
+			$(".push_pull_social").toggleClass("push_pull_social--active");
+			$(".layout-content").toggleClass("menu_js_active_bg");
+			$(".mainfooter-container").toggleClass("menu_js_active_bg");
+			
+		});
+		$('.tag_button_sign_up').click( function() {
+			$(".push_pull_social").toggleClass("push_pull_social--active");
+			$(".mainfooter-container").toggleClass("menu_js_active_bg");
+			$(".layout-content").toggleClass("menu_js_active_bg");
+			
+		});
+	});
+</script>
+{# search tooltip #}
+<script type="text/javascript">
+	$(document).ready( function(){
+		$('.search-icon').click( function() {
+			$(".tooltip_search").toggleClass("tooltip_search--jsactive");
+			$(".search-tolltip-icon").toggleClass("search-tolltip-icon--jsactive");
+			$(".search_article").focus();
+		});
+	});
+</script>
+<script type="text/javascript">
+	$("body:not(.push_pull_menu)").click(function(){
+		if($(".layout-content").hasClass("menu_js_active_bg")){
+			
+			var active= 1;
+			console.log(active);
+		}	
+	});
+	$(document).ready(function(){
+		$(".push_pull_menu").blur(function(){
+			alert("This input field has lost its focus.");
+		});
+	});
+</script>

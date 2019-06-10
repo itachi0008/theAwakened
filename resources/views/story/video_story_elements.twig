@@ -1,0 +1,8 @@
+{% set elementType = storyElements['type'] %}
+{% set elementSubType = storyElements['subtype']%}
+{% set elementIncludeFile = 'story/story_elements/'~storyElements['type']%}
+<div  class="story-elements story-element-{{ elementType }} {% if elementSubType %}story-element-{{ elementSubType }} {% endif %} "
+      data-story-element-id="{{ storyElements['id'] }}"
+      data-story-element-type="{{ storyElements['type'] }}" >
+{% include elementIncludeFile with {'element': storyElements} %}
+</div>

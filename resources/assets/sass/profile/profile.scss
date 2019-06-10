@@ -1,0 +1,162 @@
+//header
+.login-header-container {
+	float: right;
+}
+.search-icon {
+	padding: 20px 10px;
+	float: left;
+	background-image: url(icon-loupe.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 1px 10px 0 0;
+	cursor: pointer;
+	background-size: 15px;
+	@include breakpoint($tablet){
+		margin: 8px 10px 0 0;
+		padding: 20px;
+	}
+}
+.bell-icon {
+	float: left;
+	padding: 20px 10px;
+	background-image: url("icon-bell.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 1px 10px 0 0;
+	@include breakpoint($pc){
+		padding: 20px;
+		margin: 8px 10px 0 0;
+	}
+}
+.profile-thumbnail{
+	width: 33px;
+	margin: 5px 15px 0px 0;
+	float: left;
+	position: relative;
+	@include breakpoint($pc){
+		margin:12px 15px 12px 0;
+	}
+}
+.profile-thumbnail img{
+	width:100%;
+	border-radius:100%;
+	border: 1px $author_border solid;
+}
+.logout_tooltip_container{
+	position: absolute;
+	left: -25px;
+	top: 30px;
+	padding-top: 5px;
+	@include breakpoint($pc){
+		left: -65px;
+	}
+}
+.logout_tooltip{
+	visibility: hidden;
+	position: relative;
+	background-color: $white;
+	cursor: pointer;
+	border: 1px solid;
+	border-radius: 2px;
+	cursor: pointer;
+	width: 90px;
+	z-index: $zIndex-1;
+	padding-top: 10px;
+	@include breakpoint($pc){
+		width: 170px;
+	}
+	li{
+		cursor: pointer;
+		padding: 3px 20px;
+		font-size: 13px;
+		border-bottom: 1px #d0d0d0 solid;
+		text-align: left;
+		color: #4a4a4a;
+		@include breakpoint($pc){
+			padding-right:35px;
+			font-size: 13px;
+			padding: 7px 20px;
+		}
+	}
+	&:after{
+		bottom: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(136, 183, 213, 0);
+		border-bottom-color: #fff;
+		border-width: 5px;
+		margin-left: -7px;
+	}
+}
+.profile-thumbnail:hover .logout_tooltip {
+	visibility: visible;
+}
+.profile_tag_container{
+	width: 100%;
+	float: left;
+	margin:22px 0 13px 0;
+}
+.profile_tag{
+	padding: 0px 10px; 
+	float: left;
+	margin: 5px 5px 5px 0;
+	border:1px solid $static_p;
+	border-radius: 22px;
+}
+.profile_filter_tag_container{
+	width: 100%;
+	float: left;
+	margin:0px 0 25px 0;
+}
+.filter_tag{
+	padding: 0px 15px; 
+	float: left;
+	margin-right: 5px;
+	border:1px solid $static_p;
+	border-radius: 22px;
+	color: $blue_button;
+	@include breakpoint($pc){
+		padding: 0px 20px; 
+		margin-right: 15px;
+	}
+}
+.profile_tag_selected{
+	background-color: $blue_button;
+	color: $white;
+}
+
+
+
+//filters
+section.home_main_story-container {
+	width: 100%;
+	float: left;
+}
+.profile_filter{
+	width: 100%;
+	float: left;
+}
+.profile_filter_container{
+	@include container();
+	background-color: $white;
+	padding:0 15px;
+	@include breakpoint($pc){
+		padding: 0;
+	}
+}
+.tab_mypage{
+	color: $p_color;
+	font-size: $fontsize-small;
+	padding: 11px 0;
+	display: inline-block;
+	//text-shadow: 8px 10px 15px rgb(23, 83, 135);
+}
+
+//tag
+
+//filters
